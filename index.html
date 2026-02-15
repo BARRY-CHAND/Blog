@@ -15,7 +15,6 @@
             min-height: 100vh;
         }
 
-        /* ── TOP NAV ── */
         .topnav {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -36,10 +35,7 @@
             letter-spacing: 1px;
         }
 
-        .topnav nav {
-            display: flex;
-            gap: 10px;
-        }
+        .topnav nav { display: flex; gap: 10px; }
 
         .topnav nav a {
             color: #B0C0CC;
@@ -59,7 +55,6 @@
             border-color: #3E5060;
         }
 
-        /* ── MAIN ── */
         .main {
             margin-top: 60px;
             padding: 50px 40px;
@@ -68,11 +63,9 @@
             margin-right: auto;
         }
 
-        /* ── PAGE SECTIONS ── */
         .page-section { display: none; }
         .page-section.active { display: block; }
 
-        /* ── HOME - HEADER ── */
         header {
             text-align: center;
             padding: 80px 40px;
@@ -90,11 +83,7 @@
             font-weight: 700;
         }
 
-        .tagline {
-            font-size: 1.4em;
-            color: #D4DFE6;
-            margin-bottom: 15px;
-        }
+        .tagline { font-size: 1.4em; color: #D4DFE6; margin-bottom: 15px; }
 
         .status {
             color: #B0C0CC;
@@ -107,7 +96,6 @@
             border: 1px solid #3E5060;
         }
 
-        /* ── SECTIONS ── */
         .section {
             background: #36454F;
             padding: 40px;
@@ -127,7 +115,15 @@
             letter-spacing: 1px;
         }
 
-        /* ── SKILLS ── */
+        .section-title {
+            color: #e0e0e0;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3E5060;
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -143,317 +139,10 @@
             transition: all 0.3s ease;
         }
 
-        .skill-card:hover {
-            border-color: #4A5E6A;
-            background: #3E5060;
-        }
+        .skill-card:hover { border-color: #4A5E6A; background: #3E5060; }
+        .skill-card h4 { color: #e8e8e8; font-size: 1.1em; margin-bottom: 10px; }
+        .skill-card p { color: #D4DFE6; font-size: 0.95em; }
 
-        .skill-card h4 {
-            color: #e8e8e8;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-
-        .skill-card p {
-            color: #D4DFE6;
-            font-size: 0.95em;
-        }
-
-        /* ── DAILY LOGS ── */
-        .section-title {
-            color: #e0e0e0;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            border-bottom: 3px solid #3E5060;
-            padding-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        /* ── ADD LOG FORM ── */
-        .add-log-form {
-            background: #36454F;
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid #3E5060;
-            border-left: 5px solid #7A9BAD;
-            margin-bottom: 30px;
-        }
-
-        .add-log-form h3 {
-            color: #e0e0e0;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .form-group label {
-            color: #B0C0CC;
-            font-size: 0.85em;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            background: #2C3539;
-            border: 2px solid #3E5060;
-            border-radius: 10px;
-            padding: 12px 15px;
-            color: #D4DFE6;
-            font-size: 0.95em;
-            font-family: 'Segoe UI', sans-serif;
-            transition: border-color 0.3s ease;
-            outline: none;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #7A9BAD;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #4A5E6A;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .date-display {
-            background: #2C3539;
-            border: 2px solid #3E5060;
-            border-radius: 10px;
-            padding: 12px 15px;
-            color: #7A9BAD;
-            font-size: 0.95em;
-            font-family: monospace;
-            letter-spacing: 0.5px;
-        }
-
-        .form-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 5px;
-        }
-
-        .btn-save {
-            background: #4A5E6A;
-            color: #f0f0f0;
-            border: 2px solid #5A7080;
-            padding: 12px 30px;
-            border-radius: 10px;
-            font-size: 0.95em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .btn-save:hover {
-            background: #5A7080;
-            border-color: #7A9BAD;
-            color: #fff;
-        }
-
-        .btn-clear {
-            background: transparent;
-            color: #B0C0CC;
-            border: 2px solid #3E5060;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-size: 0.95em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .btn-clear:hover {
-            border-color: #cc6666;
-            color: #cc6666;
-        }
-
-        /* ── SEARCH BAR ── */
-        .search-bar {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 25px;
-            background: #36454F;
-            border: 2px solid #3E5060;
-            border-radius: 12px;
-            padding: 12px 18px;
-            transition: border-color 0.3s ease;
-        }
-
-        .search-bar:focus-within {
-            border-color: #7A9BAD;
-        }
-
-        .search-bar span {
-            font-size: 1.1em;
-            flex-shrink: 0;
-        }
-
-        .search-bar input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #D4DFE6;
-            font-size: 0.95em;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .search-bar input::placeholder {
-            color: #4A5E6A;
-        }
-
-        .log-count {
-            color: #4A5E6A;
-            font-size: 0.8em;
-            white-space: nowrap;
-        }
-
-        /* ── LOG ENTRIES ── */
-        .log-entry {
-            background: #36454F;
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid #3E5060;
-            border-left: 5px solid #4A5E6A;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        .log-entry:hover {
-            border-color: #7A9BAD;
-            border-left-color: #7A9BAD;
-        }
-
-        .log-entry-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-            gap: 15px;
-        }
-
-        .log-entry .log-date {
-            color: #7A9BAD;
-            font-size: 0.82em;
-            font-family: monospace;
-            letter-spacing: 0.5px;
-        }
-
-        .log-entry h3 {
-            color: #f0f0f0;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .log-entry p {
-            color: #D4DFE6;
-            font-size: 0.95em;
-            line-height: 1.7;
-        }
-
-        .btn-delete {
-            background: transparent;
-            border: 1px solid transparent;
-            color: #4A5E6A;
-            cursor: pointer;
-            font-size: 1em;
-            padding: 4px 8px;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            flex-shrink: 0;
-        }
-
-        .btn-delete:hover {
-            color: #cc6666;
-            border-color: #cc6666;
-            background: rgba(204, 102, 102, 0.08);
-        }
-
-        .empty-logs {
-            background: rgba(212, 223, 230, 0.04);
-            border: 2px dashed #3E5060;
-            border-radius: 15px;
-            padding: 80px 25px;
-            text-align: center;
-        }
-
-        .empty-logs span {
-            display: block;
-            font-size: 3em;
-            margin-bottom: 15px;
-        }
-
-        .empty-logs p {
-            font-size: 1em;
-            color: #4A5E6A;
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 40px;
-            color: #4A5E6A;
-            font-size: 0.95em;
-        }
-
-        /* ── TOAST NOTIFICATION ── */
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #4A5E6A;
-            color: #f0f0f0;
-            padding: 14px 24px;
-            border-radius: 12px;
-            border: 1px solid #7A9BAD;
-            font-size: 0.9em;
-            font-weight: 600;
-            z-index: 999;
-            transform: translateY(80px);
-            opacity: 0;
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            pointer-events: none;
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* ── CONTACT ── */
         .social-links {
             display: flex;
             gap: 20px;
@@ -472,13 +161,8 @@
             transition: all 0.3s ease;
         }
 
-        .social-links a:hover {
-            background: #D4DFE6;
-            color: #2C3539;
-            border-color: #D4DFE6;
-        }
+        .social-links a:hover { background: #D4DFE6; color: #2C3539; border-color: #D4DFE6; }
 
-        /* ── FOOTER QUOTES ── */
         .footer-quotes {
             background: #36454F;
             padding: 40px;
@@ -487,21 +171,10 @@
             margin-bottom: 35px;
         }
 
-        .footer-quotes p {
-            font-style: italic;
-            color: #B0C0CC;
-            margin-bottom: 12px;
-            font-size: 1em;
-        }
+        .footer-quotes p { font-style: italic; color: #B0C0CC; margin-bottom: 12px; font-size: 1em; }
 
-        .copyright {
-            text-align: center;
-            color: #4A5E6A;
-            font-size: 0.85em;
-            padding-bottom: 40px;
-        }
+        .copyright { text-align: center; color: #4A5E6A; font-size: 0.85em; padding-bottom: 40px; }
 
-        /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
             .topnav { padding: 0 20px; }
             .topnav .brand { font-size: 0.9em; }
@@ -511,27 +184,21 @@
             .tagline { font-size: 1.1em; }
             .section { padding: 25px; }
             h2 { font-size: 1.8em; }
-            .form-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- TOP NAV -->
     <div class="topnav">
         <span class="brand">Barath Chand</span>
         <nav>
             <a class="active" onclick="showSection('home', this)">🏠 Home</a>
-            <a onclick="showSection('logs', this)">📅 Daily Logs</a>
+            <a href="logs.html">📅 Daily Logs</a>
             <a onclick="showSection('skills', this)">⚡ Skills</a>
             <a onclick="showSection('contact', this)">📬 Contact</a>
         </nav>
     </div>
 
-    <!-- TOAST -->
-    <div class="toast" id="toast"></div>
-
-    <!-- MAIN -->
     <div class="main">
 
         <!-- HOME -->
@@ -555,46 +222,6 @@
             </div>
 
             <p class="copyright">Building a safer digital future, one line of code at a time.</p>
-        </div>
-
-        <!-- DAILY LOGS -->
-        <div id="logs" class="page-section">
-            <h2 class="section-title">📅 Daily Logs</h2>
-
-            <!-- ADD LOG FORM -->
-            <div class="add-log-form">
-                <h3>✏️ New Log Entry</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>📅 Date & Time (Auto-filled)</label>
-                        <div class="date-display" id="current-datetime">—</div>
-                    </div>
-                    <div class="form-group">
-                        <label>📌 Title</label>
-                        <input type="text" id="log-title" placeholder="e.g. Day 3 — Linux file permissions" maxlength="100" />
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group full-width">
-                        <label>📝 Log Entry</label>
-                        <textarea id="log-content" placeholder="Write anything — notes, thoughts, discoveries, random ideas..."></textarea>
-                    </div>
-                </div>
-                <div class="form-actions">
-                    <button class="btn-save" onclick="saveLog()">💾 Save Log</button>
-                    <button class="btn-clear" onclick="clearForm()">✕ Clear</button>
-                </div>
-            </div>
-
-            <!-- SEARCH BAR -->
-            <div class="search-bar">
-                <span>🔍</span>
-                <input type="text" id="search-input" placeholder="Search logs by title or content..." oninput="renderLogs()" />
-                <span class="log-count" id="log-count"></span>
-            </div>
-
-            <!-- LOGS CONTAINER -->
-            <div id="logs-container"></div>
         </div>
 
         <!-- SKILLS -->
@@ -644,173 +271,12 @@
     </div>
 
     <script>
-        // ── NAV ──
         function showSection(id, el) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.topnav nav a').forEach(a => a.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             el.classList.add('active');
-            if (id === 'logs') {
-                updateDateDisplay();
-                renderLogs();
-            }
         }
-
-        // ── DATE/TIME ──
-        function getFormattedDate() {
-            const now = new Date();
-            const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-            const day = days[now.getDay()];
-            const date = String(now.getDate()).padStart(2,'0');
-            const month = months[now.getMonth()];
-            const year = now.getFullYear();
-            const hours = String(now.getHours()).padStart(2,'0');
-            const mins = String(now.getMinutes()).padStart(2,'0');
-            return `${day}, ${date} ${month} ${year} — ${hours}:${mins}`;
-        }
-
-        function updateDateDisplay() {
-            document.getElementById('current-datetime').textContent = getFormattedDate();
-        }
-
-        // Update clock every minute when on logs page
-        setInterval(() => {
-            if (document.getElementById('logs').classList.contains('active')) {
-                updateDateDisplay();
-            }
-        }, 60000);
-
-        // ── STORAGE HELPERS ──
-        function getLogs() {
-            try {
-                return JSON.parse(localStorage.getItem('barath_logs') || '[]');
-            } catch {
-                return [];
-            }
-        }
-
-        function saveLogs(logs) {
-            localStorage.setItem('barath_logs', JSON.stringify(logs));
-        }
-
-        // ── SAVE LOG ──
-        function saveLog() {
-            const title = document.getElementById('log-title').value.trim();
-            const content = document.getElementById('log-content').value.trim();
-
-            if (!title) {
-                showToast('⚠️ Please enter a title for your log.');
-                document.getElementById('log-title').focus();
-                return;
-            }
-            if (!content) {
-                showToast('⚠️ Please write something in the log content.');
-                document.getElementById('log-content').focus();
-                return;
-            }
-
-            const logs = getLogs();
-            const newLog = {
-                id: Date.now(),
-                date: getFormattedDate(),
-                title,
-                content
-            };
-
-            logs.unshift(newLog); // newest first
-            saveLogs(logs);
-            clearForm();
-            renderLogs();
-            showToast('✅ Log saved successfully!');
-        }
-
-        // ── DELETE LOG ──
-        function deleteLog(id) {
-            const logs = getLogs().filter(l => l.id !== id);
-            saveLogs(logs);
-            renderLogs();
-            showToast('🗑️ Log deleted.');
-        }
-
-        // ── CLEAR FORM ──
-        function clearForm() {
-            document.getElementById('log-title').value = '';
-            document.getElementById('log-content').value = '';
-            updateDateDisplay();
-        }
-
-        // ── RENDER LOGS ──
-        function renderLogs() {
-            const container = document.getElementById('logs-container');
-            const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
-            let logs = getLogs();
-
-            // Filter by search
-            if (searchTerm) {
-                logs = logs.filter(l =>
-                    l.title.toLowerCase().includes(searchTerm) ||
-                    l.content.toLowerCase().includes(searchTerm)
-                );
-            }
-
-            // Update count
-            const total = getLogs().length;
-            const countEl = document.getElementById('log-count');
-            if (searchTerm) {
-                countEl.textContent = `${logs.length} of ${total} logs`;
-            } else {
-                countEl.textContent = total === 0 ? '' : `${total} log${total !== 1 ? 's' : ''}`;
-            }
-
-            // Render
-            if (getLogs().length === 0) {
-                container.innerHTML = `
-                    <div class="empty-logs">
-                        <span>📭</span>
-                        <p>No logs yet. Add your first entry above!</p>
-                    </div>`;
-                return;
-            }
-
-            if (logs.length === 0) {
-                container.innerHTML = `<div class="no-results">🔍 No logs match your search.</div>`;
-                return;
-            }
-
-            container.innerHTML = logs.map(log => `
-                <div class="log-entry">
-                    <div class="log-entry-header">
-                        <div>
-                            <div class="log-date">🕐 ${log.date}</div>
-                            <h3>${escapeHtml(log.title)}</h3>
-                        </div>
-                        <button class="btn-delete" onclick="deleteLog(${log.id})" title="Delete log">🗑️</button>
-                    </div>
-                    <p>${escapeHtml(log.content).replace(/\n/g, '<br>')}</p>
-                </div>
-            `).join('');
-        }
-
-        // ── ESCAPE HTML ──
-        function escapeHtml(text) {
-            return text
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;');
-        }
-
-        // ── TOAST ──
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            toast.textContent = msg;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2800);
-        }
-
-        // ── INIT ──
-        updateDateDisplay();
     </script>
 </body>
 </html>
