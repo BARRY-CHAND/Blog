@@ -186,6 +186,106 @@
 
         .btn-clear:hover { border-color: #cc6666; color: #cc6666; }
 
+        .btn-export {
+            background: #7A9BAD;
+            color: #f0f0f0;
+            border: 2px solid #8AACBE;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .btn-export:hover { background: #8AACBE; border-color: #9ABCCE; }
+
+        /* ── EXPORT MODAL ── */
+        .export-modal {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            padding: 20px;
+        }
+
+        .export-modal.show { display: flex; }
+
+        .export-content {
+            background: #36454F;
+            border: 2px solid #3E5060;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .export-content h3 {
+            color: #e0e0e0;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .export-content p {
+            color: #B0C0CC;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .export-content textarea {
+            width: 100%;
+            min-height: 300px;
+            background: #2C3539;
+            border: 2px solid #3E5060;
+            border-radius: 10px;
+            padding: 15px;
+            color: #D4DFE6;
+            font-family: monospace;
+            font-size: 0.85em;
+            resize: vertical;
+            margin-bottom: 15px;
+        }
+
+        .export-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-copy {
+            background: #4A5E6A;
+            color: #f0f0f0;
+            border: 2px solid #5A7080;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .btn-copy:hover { background: #5A7080; border-color: #7A9BAD; }
+
+        .btn-close-modal {
+            background: transparent;
+            color: #B0C0CC;
+            border: 2px solid #3E5060;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .btn-close-modal:hover { border-color: #4A5E6A; color: #D4DFE6; }
+
         /* ── SEARCH BAR ── */
         .search-bar {
             display: flex;
@@ -328,6 +428,26 @@
     <!-- TOAST -->
     <div class="toast" id="toast"></div>
 
+    <!-- EXPORT MODAL -->
+    <div class="export-modal" id="export-modal">
+        <div class="export-content">
+            <h3>📤 Export Logs for GitHub</h3>
+            <p><strong>Instructions:</strong></p>
+            <ol style="color: #B0C0CC; margin-bottom: 20px; padding-left: 20px; line-height: 1.8;">
+                <li>Copy the HTML code below</li>
+                <li>Open <code>index.html</code> in your repo</li>
+                <li>Find the <code>&lt;!-- LOGS DISPLAY --&gt;</code> section</li>
+                <li>Replace everything inside <code>&lt;div id="logs-display"&gt;</code> with this code</li>
+                <li>Commit and push to GitHub</li>
+            </ol>
+            <textarea id="export-output" readonly></textarea>
+            <div class="export-actions">
+                <button class="btn-copy" onclick="copyExport()">📋 Copy to Clipboard</button>
+                <button class="btn-close-modal" onclick="closeExportModal()">✕ Close</button>
+            </div>
+        </div>
+    </div>
+
     <!-- MAIN -->
     <div class="main">
         <h2 class="section-title">📅 Daily Logs</h2>
@@ -354,6 +474,7 @@
             <div class="form-actions">
                 <button class="btn-save" onclick="saveLog()">💾 Save Log</button>
                 <button class="btn-clear" onclick="clearForm()">✕ Clear</button>
+                <button class="btn-export" onclick="exportLogs()">📤 Export for GitHub</button>
             </div>
         </div>
 
@@ -502,6 +623,46 @@
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 2800);
         }
+
+        // ── EXPORT ──
+        function exportLogs() {
+            const logs = getLogs();
+            if (logs.length === 0) {
+                showToast('⚠️ No logs to export. Add some logs first!');
+                return;
+            }
+
+            const html = logs.map(log => `
+                <div class="log-entry">
+                    <div class="log-entry-header">
+                        <div>
+                            <div class="log-date">🕐 ${log.date}</div>
+                            <h3>${escapeHtml(log.title)}</h3>
+                        </div>
+                    </div>
+                    <p>${escapeHtml(log.content).replace(/\n/g, '<br>')}</p>
+                </div>
+            `).join('\n');
+
+            document.getElementById('export-output').value = html;
+            document.getElementById('export-modal').classList.add('show');
+        }
+
+        function copyExport() {
+            const textarea = document.getElementById('export-output');
+            textarea.select();
+            document.execCommand('copy');
+            showToast('✅ Copied to clipboard! Now paste into index.html');
+        }
+
+        function closeExportModal() {
+            document.getElementById('export-modal').classList.remove('show');
+        }
+
+        // Close modal on outside click
+        document.getElementById('export-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'export-modal') closeExportModal();
+        });
 
         // ── INIT ──
         updateDateDisplay();
