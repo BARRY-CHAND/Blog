@@ -317,7 +317,7 @@
                 <p>I'm always excited to connect with fellow cybersecurity enthusiasts, students, and professionals. Whether you want to share knowledge, collaborate on projects, or just chat about security trends, feel free to reach out!</p>
                 <p style="margin-top: 15px; color: #B0C0CC; font-style: italic;">⚡ Don't try to reach me through phone calls, cause there is a reason 😎</p>
                 <div class="social-links">
-                    <a href="/cdn-cgi/l/email-protection#7517140714011d161d141b1135100d14180519105b161a18">📧 Email</a>
+                    <a href="mailto:barathchand@example.com">📧 Email</a>
                     <a href="#">💻 GitHub</a>
                 </div>
             </div>
@@ -325,7 +325,13 @@
 
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         function showSection(id, el) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.topnav nav a').forEach(a => a.classList.remove('ac
+            document.querySelectorAll('.topnav nav a').forEach(a => a.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            el.classList.add('active');
+        }
+    </script>
+</body>
+</html>
