@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archiviette Log - Barath Chand</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0F0F0F;
+            color: #d0d0d0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .topnav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 60px;
+            background: linear-gradient(135deg, #0F0F0F 0%, #2A2A2A 100%);
+            border-bottom: 2px solid #C6A14A;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .topnav .brand {
+            color: #C6A14A;
+            font-size: 1.1em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: #C6A14A;
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 2px solid #7A0F1B;
+            border-radius: 8px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #7A0F1B;
+            border-color: #A83C1D;
+        }
+
+        .main {
+            margin-top: 60px;
+            padding: 50px 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .log-container {
+            background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid #C6A14A;
+            box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
+        }
+
+        .log-date {
+            color: #A83C1D;
+            font-size: 0.9em;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #C6A14A;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        .log-content p {
+            color: #d0d0d0;
+            font-size: 1.1em;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .topnav { padding: 0 20px; }
+            .main { padding: 30px 20px; }
+            .log-container { padding: 30px; }
+            h1 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="index.html" class="brand">Barath Chand</a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+
+    <div class="main">
+        <div class="log-container">
+            <div class="log-date">🕐 Thursday, 21 Feb 2026 — 12:42</div>
+            <h1>Archiviette - Three Idiots Who Know Nothing Try to Build Something</h1>
+            <div class="log-content">
+                <p>The title of this entry is given by one of my friend DK. We decided to build Archiviette, a student attendance and marks tracking system for our class. Why? Because spreadsheets are boring, nobody maintains them properly, and also because our collective resume currently peaks at "can print Hello World" and then immediately falls off a cliff.</p>
+                
+                <p>The team is me, Pacman, and Dino. Three people whose entire programming experience is knowing how to print "Hello, world!" in Python and feeling way too accomplished afterward. We don't know Flask. We don't know React. We don't know SQLite. We don't even know what the fuck JSON is, we just know it's pronounced the same as Jason. And somehow, this felt like a good time to start a real project.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
