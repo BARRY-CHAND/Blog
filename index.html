@@ -9,8 +9,8 @@
 
         body {
             font-family: 'Segoe UI', sans-serif;
-            background: #2C3539;
-            color: #D4DFE6;
+            background: #0F0F0F;
+            color: #d0d0d0;
             line-height: 1.6;
             min-height: 100vh;
         }
@@ -19,17 +19,18 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             height: 60px;
-            background: #1F1F1F;
-            border-bottom: 2px solid #3E5060;
+            background: linear-gradient(135deg, #0F0F0F 0%, #2A2A2A 100%);
+            border-bottom: 2px solid #C6A14A;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 40px;
             z-index: 100;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
         }
 
         .topnav .brand {
-            color: #f0f0f0;
+            color: #C6A14A;
             font-size: 1.1em;
             font-weight: 600;
             letter-spacing: 1px;
@@ -38,7 +39,7 @@
         .topnav nav { display: flex; gap: 10px; }
 
         .topnav nav a {
-            color: #B0C0CC;
+            color: #C6A14A;
             text-decoration: none;
             padding: 8px 18px;
             border-radius: 8px;
@@ -50,9 +51,9 @@
 
         .topnav nav a:hover,
         .topnav nav a.active {
-            background: #2C3539;
-            color: #D4DFE6;
-            border-color: #3E5060;
+            background: #7A0F1B;
+            color: #C6A14A;
+            border-color: #A83C1D;
         }
 
         .main {
@@ -69,72 +70,88 @@
         header {
             text-align: center;
             padding: 80px 40px;
-            background: #36454F;
+            background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
             border-radius: 20px;
             margin-bottom: 35px;
-            border: 2px solid #3E5060;
+            border: 2px solid #C6A14A;
+            box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
         }
 
         h1 {
             font-size: 3.5em;
-            color: #f0f0f0;
+            color: #C6A14A;
             margin-bottom: 15px;
             letter-spacing: 2px;
             font-weight: 700;
         }
 
-        .tagline { font-size: 1.4em; color: #D4DFE6; margin-bottom: 15px; }
+        .tagline { 
+            font-size: 1.4em; 
+            color: #d0d0d0; 
+            margin-bottom: 15px;
+        }
 
         .status {
-            color: #B0C0CC;
+            color: #C6A14A;
             font-size: 1.2em;
             margin-top: 20px;
             padding: 10px 25px;
-            background: rgba(212, 223, 230, 0.08);
+            background: rgba(122, 15, 27, 0.4);
             border-radius: 25px;
             display: inline-block;
-            border: 1px solid #3E5060;
+            border: 1px solid #A83C1D;
         }
 
         .section {
-            background: #36454F;
+            background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
             padding: 40px;
             margin-bottom: 35px;
             border-radius: 20px;
-            border: 2px solid #3E5060;
-            border-left: 6px solid #4A5E6A;
-            border-right: 6px solid #4A5E6A;
+            border: 2px solid #C6A14A;
+            border-left: 6px solid #C6A14A;
+            border-right: 6px solid #C6A14A;
+            box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
         }
 
         h2 {
-            color: #e0e0e0;
+            color: #C6A14A;
             margin-bottom: 25px;
             font-size: 2.2em;
-            border-bottom: 3px solid #3E5060;
+            border-bottom: 3px solid #A83C1D;
             padding-bottom: 15px;
             letter-spacing: 1px;
         }
 
+        .section p {
+            color: #d0d0d0;
+        }
+
         .section-title {
-            color: #e0e0e0;
+            color: #C6A14A;
             font-size: 2.2em;
             margin-bottom: 30px;
-            border-bottom: 3px solid #3E5060;
+            border-bottom: 3px solid #A83C1D;
             padding-bottom: 15px;
             letter-spacing: 1px;
         }
 
         .log-entry {
-            background: #36454F;
+            background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
             padding: 30px;
             border-radius: 15px;
-            border: 2px solid #3E5060;
-            border-left: 5px solid #4A5E6A;
+            border: 2px solid #C6A14A;
+            border-left: 5px solid #C6A14A;
             margin-bottom: 20px;
             transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
         }
 
-        .log-entry:hover { border-color: #7A9BAD; border-left-color: #7A9BAD; }
+        .log-entry:hover { 
+            border-color: #A83C1D; 
+            border-left-color: #C6A14A;
+            box-shadow: 0 6px 25px rgba(168, 60, 29, 0.2);
+            transform: translateY(-2px);
+        }
 
         .log-entry-header {
             display: flex;
@@ -145,25 +162,34 @@
         }
 
         .log-entry .log-date {
-            color: #7A9BAD;
+            color: #A83C1D;
             font-size: 0.82em;
             font-family: monospace;
             letter-spacing: 0.5px;
         }
 
-        .log-entry h3 { color: #f0f0f0; font-size: 1.2em; margin-bottom: 10px; }
-        .log-entry p { color: #D4DFE6; font-size: 0.95em; line-height: 1.7; }
+        .log-entry h3 { 
+            color: #C6A14A; 
+            font-size: 1.2em; 
+            margin-bottom: 10px;
+        }
+        
+        .log-entry p { 
+            color: #d0d0d0; 
+            font-size: 0.95em; 
+            line-height: 1.7; 
+        }
 
         .empty-logs {
-            background: rgba(212, 223, 230, 0.04);
-            border: 2px dashed #3E5060;
+            background: rgba(42, 42, 42, 0.3);
+            border: 2px dashed #7A0F1B;
             border-radius: 15px;
             padding: 80px 25px;
             text-align: center;
         }
 
         .empty-logs span { display: block; font-size: 3em; margin-bottom: 15px; }
-        .empty-logs p { font-size: 1em; color: #4A5E6A; }
+        .empty-logs p { font-size: 1em; color: #C6A14A; }
 
         .skills-grid {
             display: grid;
@@ -173,16 +199,30 @@
         }
 
         .skill-card {
-            background: #2C3539;
+            background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
             padding: 30px;
             border-radius: 15px;
-            border: 2px solid #3E5060;
+            border: 2px solid #C6A14A;
             transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
         }
 
-        .skill-card:hover { border-color: #4A5E6A; background: #3E5060; }
-        .skill-card h4 { color: #e8e8e8; font-size: 1.1em; margin-bottom: 10px; }
-        .skill-card p { color: #D4DFE6; font-size: 0.95em; }
+        .skill-card:hover { 
+            border-color: #C6A14A; 
+            box-shadow: 0 6px 25px rgba(198, 161, 74, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        .skill-card h4 { 
+            color: #C6A14A; 
+            font-size: 1.1em; 
+            margin-bottom: 10px;
+        }
+        
+        .skill-card p { 
+            color: #d0d0d0; 
+            font-size: 0.95em; 
+        }
 
         .social-links {
             display: flex;
@@ -192,28 +232,44 @@
         }
 
         .social-links a {
-            color: #D4DFE6;
+            color: #C6A14A;
             text-decoration: none;
             padding: 12px 30px;
-            border: 2px solid #3E5060;
+            border: 2px solid #7A0F1B;
             border-radius: 25px;
-            background: rgba(212, 223, 230, 0.06);
+            background: rgba(42, 42, 42, 0.5);
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
-        .social-links a:hover { background: #D4DFE6; color: #2C3539; border-color: #D4DFE6; }
-
-        .footer-quotes {
-            background: #36454F;
-            padding: 40px;
-            border-radius: 20px;
-            border: 2px solid #3E5060;
-            margin-bottom: 35px;
+        .social-links a:hover { 
+            background: #7A0F1B; 
+            color: #C6A14A; 
+            border-color: #A83C1D;
         }
 
-        .footer-quotes p { font-style: italic; color: #B0C0CC; margin-bottom: 12px; font-size: 1em; }
-        .copyright { text-align: center; color: #4A5E6A; font-size: 0.85em; padding-bottom: 40px; }
+        .footer-quotes {
+            background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #C6A14A;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
+        }
+
+        .footer-quotes p { 
+            font-style: italic; 
+            color: #C6A14A; 
+            margin-bottom: 12px; 
+            font-size: 1em; 
+        }
+        
+        .copyright { 
+            text-align: center; 
+            color: #A83C1D; 
+            font-size: 0.85em; 
+            padding-bottom: 40px; 
+        }
 
         @media (max-width: 768px) {
             .topnav { padding: 0 20px; }
@@ -267,26 +323,22 @@
                 <div class="log-entry">
                     <div class="log-entry-header">
                         <div>
-                            <div class="log-date">🕐 Thursday, 19 Feb 2026 — 19:44</div>
-                            <h3>Entry 1 : </h3>
+                            <div class="log-date">🕐 Thursday, 21 Feb 2026 — 12:42</div>
+                            <h3>Archiviette - Three Idiots Who Know Nothing Try to Build Something</h3>
                         </div>
                     </div>
-        <           <p>This is my first log. It was supposed to be written a long time ago, but I guess I'm only logging it now because of my laziness.</p>
+                    <p>The title of this entry is given by one of my friend DK. We decided to build Archiviette, a student attendance and marks tracking system for our class. Why? Because spreadsheets are boring, nobody maintains them properly, and also because our collective resume currently peaks at "can print Hello World" and then immediately falls off a cliff.</p>
+                    <p style="margin-top: 15px;">The team is me, Pacman, and Dino. Three people whose entire programming experience is knowing how to print "Hello, world!" in Python and feeling way too accomplished afterward. We don't know Flask. We don't know React. We don't know SQLite. We don't even know what the fuck JSON is, we just know it's pronounced the same as Jason. And somehow, this felt like a good time to start a real project.</p>
                 </div>
-            </div>
-            <div id="logs-display">
+                
                 <div class="log-entry">
                     <div class="log-entry-header">
                         <div>
-                            <div class="log-date">🕐 Thursday, 21 Feb 2026 — 12:42</div>
-                            <h3>Archiviette - Three Idiots Who Know Nothing Try to Build Something : </h3>
+                            <div class="log-date">🕐 Thursday, 19 Feb 2026 — 19:44</div>
+                            <h3>Entry 1</h3>
                         </div>
                     </div>
-        <           <p>The tilte of this entry is given by one of my friend DK, We decided to build Archiviette, a student attendance and marks tracking system for our class. Why? Because spreadsheets are boring, nobody maintains them properly, and also because our collective resume currently peaks at “can print Hello World” and then immediately falls off a cliff.
-
-The team is me, Pacman, and Dino. Three people whose entire programming experience is knowing how to print "Hello, world!" in Python and feeling way too accomplished afterward. We don’t know Flask. We don’t know React. We don’t know SQLite. We don’t even know what the fuck JSON is, we just know it’s pronounced the same as Jason. And somehow, this felt like a good time to start a real project.
-
-</p>
+                    <p>This is my first log. It was supposed to be written a long time ago, but I guess I'm only logging it now because of my laziness.</p>
                 </div>
             </div>
         </div>
@@ -325,9 +377,9 @@ The team is me, Pacman, and Dino. Three people whose entire programming experien
             <div class="section">
                 <h2>Get In Touch</h2>
                 <p>I'm always excited to connect with fellow cybersecurity enthusiasts, students, and professionals. Whether you want to share knowledge, collaborate on projects, or just chat about security trends, feel free to reach out!</p>
-                <p style="margin-top: 15px; color: #B0C0CC; font-style: italic;">⚡ Don't try to reach me through phone calls, cause there is a reason 😎</p>
+                <p style="margin-top: 15px; font-style: italic;">⚡ Don't try to reach me through phone calls, cause there is a reason 😎</p>
                 <div class="social-links">
-                    <a href="mailto:barathchand@example.com">📧 Email</a>
+                    <a href="/cdn-cgi/l/email-protection#81e3e0f3e0f5e9e2e9e0efe5c1e4f9e0ecf1ede4afe2eeec">📧 Email</a>
                     <a href="#">💻 GitHub</a>
                 </div>
             </div>
