@@ -6,7 +6,6 @@
     <title>Barath Chand - Aspiring Ethical Hacker</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Segoe UI', sans-serif;
             background: #0F0F0F;
@@ -14,7 +13,6 @@
             line-height: 1.6;
             min-height: 100vh;
         }
-
         .topnav {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -28,16 +26,13 @@
             z-index: 100;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
         }
-
         .topnav .brand {
             color: #C6A14A;
             font-size: 1.1em;
             font-weight: 600;
             letter-spacing: 1px;
         }
-
         .topnav nav { display: flex; gap: 10px; }
-
         .topnav nav a {
             color: #C6A14A;
             text-decoration: none;
@@ -48,14 +43,12 @@
             border: 1px solid transparent;
             cursor: pointer;
         }
-
         .topnav nav a:hover,
         .topnav nav a.active {
             background: #7A0F1B;
             color: #C6A14A;
             border-color: #A83C1D;
         }
-
         .main {
             margin-top: 60px;
             padding: 50px 40px;
@@ -63,10 +56,8 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .page-section { display: none; }
         .page-section.active { display: block; }
-
         header {
             text-align: center;
             padding: 80px 40px;
@@ -76,7 +67,6 @@
             border: 2px solid #C6A14A;
             box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
         }
-
         h1 {
             font-size: 3.5em;
             color: #C6A14A;
@@ -84,13 +74,11 @@
             letter-spacing: 2px;
             font-weight: 700;
         }
-
         .tagline { 
             font-size: 1.4em; 
             color: #d0d0d0; 
             margin-bottom: 15px;
         }
-
         .status {
             color: #C6A14A;
             font-size: 1.2em;
@@ -101,7 +89,6 @@
             display: inline-block;
             border: 1px solid #A83C1D;
         }
-
         .section {
             background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
             padding: 40px;
@@ -112,7 +99,6 @@
             border-right: 6px solid #C6A14A;
             box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
         }
-
         h2 {
             color: #C6A14A;
             margin-bottom: 25px;
@@ -121,11 +107,9 @@
             padding-bottom: 15px;
             letter-spacing: 1px;
         }
-
         .section p {
             color: #d0d0d0;
         }
-
         .section-title {
             color: #C6A14A;
             font-size: 2.2em;
@@ -134,7 +118,6 @@
             padding-bottom: 15px;
             letter-spacing: 1px;
         }
-
         .log-entry {
             background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
             padding: 30px;
@@ -145,14 +128,12 @@
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
         }
-
         .log-entry:hover { 
             border-color: #A83C1D; 
             border-left-color: #C6A14A;
             box-shadow: 0 6px 25px rgba(168, 60, 29, 0.2);
             transform: translateY(-2px);
         }
-
         .log-entry-header {
             display: flex;
             justify-content: space-between;
@@ -160,14 +141,12 @@
             margin-bottom: 10px;
             gap: 15px;
         }
-
         .log-entry .log-date {
             color: #A83C1D;
             font-size: 0.82em;
             font-family: monospace;
             letter-spacing: 0.5px;
         }
-
         .log-entry h3 { 
             color: #C6A14A; 
             font-size: 1.2em; 
@@ -179,7 +158,6 @@
             font-size: 0.95em; 
             line-height: 1.7; 
         }
-
         .empty-logs {
             background: rgba(42, 42, 42, 0.3);
             border: 2px dashed #7A0F1B;
@@ -187,17 +165,14 @@
             padding: 80px 25px;
             text-align: center;
         }
-
         .empty-logs span { display: block; font-size: 3em; margin-bottom: 15px; }
         .empty-logs p { font-size: 1em; color: #C6A14A; }
-
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
             margin-top: 25px;
         }
-
         .skill-card {
             background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
             padding: 30px;
@@ -206,7 +181,6 @@
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
         }
-
         .skill-card:hover { 
             border-color: #C6A14A; 
             box-shadow: 0 6px 25px rgba(198, 161, 74, 0.15);
@@ -223,14 +197,12 @@
             color: #d0d0d0; 
             font-size: 0.95em; 
         }
-
         .social-links {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
             margin-top: 25px;
         }
-
         .social-links a {
             color: #C6A14A;
             text-decoration: none;
@@ -241,13 +213,11 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-
         .social-links a:hover { 
             background: #7A0F1B; 
             color: #C6A14A; 
             border-color: #A83C1D;
         }
-
         .footer-quotes {
             background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
             padding: 40px;
@@ -256,7 +226,6 @@
             margin-bottom: 35px;
             box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
         }
-
         .footer-quotes p { 
             font-style: italic; 
             color: #C6A14A; 
@@ -270,7 +239,6 @@
             font-size: 0.85em; 
             padding-bottom: 40px; 
         }
-
         @media (max-width: 768px) {
             .topnav { padding: 0 20px; }
             .topnav .brand { font-size: 0.9em; }
@@ -293,7 +261,6 @@
             <a onclick="showSection('contact', this)">📬 Contact</a>
         </nav>
     </div>
-
     <div class="main">
         <div id="home" class="page-section active">
             <header>
@@ -301,22 +268,18 @@
                 <p class="tagline">Aspiring Ethical Hacker | Cybersecurity Enthusiast</p>
                 <p class="status">🎓 BE Cybersecurity - 1st Year Student</p>
             </header>
-
             <div class="section">
                 <h2>About Me</h2>
                 <p>Welcome to my corner of the internet! I'm Barath Chand, a first-year BE Cybersecurity student with a passion for ethical hacking and digital security. My mission is to become a skilled ethical hacker who helps organizations protect themselves from cyber threats and make the digital world a safer place.</p>
                 <p style="margin-top: 15px;">I believe that cybersecurity is not just about breaking systems—it's about understanding them deeply enough to protect them. Every vulnerability discovered is an opportunity to build stronger defenses.</p>
             </div>
-
             <div class="footer-quotes">
                 <p>"Sometimes the only way to move forward… is to revisit the things in your past that were holding you back."</p>
                 <p>"We're not gods, we're just people trying to do the right thing."</p>
                 <p>"You don't have to stop being afraid. You just have to get out there and do it anyway."</p>
             </div>
-
             <p class="copyright">Building a safer digital future, one line of code at a time.</p>
         </div>
-
         <div id="logs" class="page-section">
             <h2 class="section-title">📅 Daily Logs</h2>
             <div id="logs-display">
@@ -324,7 +287,7 @@
                     <div class="log-entry-header">
                         <div>
                             <div class="log-date">🕐 Thursday, 21 Feb 2026 — 12:42</div>
-                            <h3><a href="log-archiviette.html" style="color: #C6A14A; text-decoration: none;">Archiviette - Three Idiots Who Know Nothing Try to Build Something</a></h3>
+                            <h3><a href="Log archiviette.html" style="color: #C6A14A; text-decoration: none;">Archiviette - Three Idiots Who Know Nothing Try to Build Something</a></h3>
                         </div>
                     </div>
                     <p>The title of this entry is given by one of my friend DK. We decided to build Archiviette, a student attendance and marks tracking system for our class...</p>
@@ -342,7 +305,6 @@
                 </div>
             </div>
         </div>
-
         <div id="skills" class="page-section">
             <h2 class="section-title">⚡ Skills & Learning</h2>
             <div class="skills-grid">
@@ -372,7 +334,6 @@
                 </div>
             </div>
         </div>
-
         <div id="contact" class="page-section">
             <div class="section">
                 <h2>Get In Touch</h2>
@@ -385,7 +346,6 @@
             </div>
         </div>
     </div>
-
     <script>
         function showSection(id, el) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
