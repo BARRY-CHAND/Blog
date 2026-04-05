@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Digest - Barath Chand</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0A0F0A;
+            color: #d0d0d0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        #matrix-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            opacity: 0.12;
+        }
+
+        .topnav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 60px;
+            background: linear-gradient(135deg, #0A0F0A 0%, #1A2A1A 100%);
+            border-bottom: 2px solid #4A8C5C;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .topnav .brand {
+            color: #4A8C5C;
+            font-size: 1.1em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: #4A8C5C;
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 2px solid #1B4D2E;
+            border-radius: 8px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #1B4D2E;
+            border-color: #2E6B42;
+        }
+
+        .main {
+            margin-top: 60px;
+            padding: 50px 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .log-container {
+            background: linear-gradient(135deg, #0A0F0A 0%, #1B4D2E 100%);
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid #4A8C5C;
+            box-shadow: 0 8px 25px rgba(27, 77, 46, 0.4);
+        }
+
+        .edition-tag {
+            color: #2E6B42;
+            font-size: 0.8em;
+            font-family: monospace;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .log-date {
+            color: #2E6B42;
+            font-size: 0.9em;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #4A8C5C;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        .log-content p {
+            color: #d0d0d0;
+            font-size: 1.1em;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .topnav { padding: 0 20px; }
+            .main { padding: 30px 20px; }
+            .log-container { padding: 30px; }
+            h1 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="topnav">
+        <a href="index.html" class="brand">Barath Chand</a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+
+    <div class="main">
+        <div class="log-container">
+            <div class="edition-tag">// THE DIGEST — EDITION 03</div>
+            <div class="log-date">🕐 Sunday, 05 Apr 2026</div>
+            <h1>The Digest</h1>
+
+            <div class="log-content">
+                <p>This is the third blog I'm putting out, and even though the name "The Digest" might seem like it came out of nowhere, trust me — it's more relevant than it looks. Both meanings apply here, and that's exactly why it works.</p>
+
+                <p>This one is about CipherHash, a project my friend Avinash K. and I built as an assignment for a minor subject in college. It's a hashing project, and the blog is called The Digest. If you didn't catch that — the output of a hash function is literally called a digest. So yeah, it was always going to be called this.</p>
+
+                <p>This was a genuinely good experience — working on a project with a friend, sharing insights, throwing ideas at each other, sometimes landing on the solution we needed, and sometimes landing on problems we didn't ask for. That part was new for me. I've almost always preferred to work alone, so having someone to bounce things off of, contradict, and build with was a fresh kind of dynamic.</p>
+
+                <p>The project came together in a shorter time than expected, even though we started late — which might be the most student thing I've ever written. The majority of the coding work was done by Avinash K., since I'm still making my way through front-end programming. I handled inputs, logic, and a good amount of the thinking behind it. Even so, I understood the structure and the flow throughout. The colour combinations and palettes were chosen by Avinash, which also made this my first project with any real front-end involvement — and it was a good one.</p>
+
+                <p>In the end, this was more than just an assignment. It gave me a better understanding of different types of hashing, and quietly showed me that working with someone else can change the way I approach things — sometimes for the better, sometimes into territory I wasn't expecting, but always forward.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const fontSize = 14;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = Array(columns).fill(1);
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノ';
+
+        function draw() {
+            ctx.fillStyle = 'rgba(10, 15, 10, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const char = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillStyle = '#4A8C5C';
+                ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 45);
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
 
