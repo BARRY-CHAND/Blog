@@ -3,313 +3,430 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barath Chand - Aspiring Ethical Hacker</title>
+    <title>Barath Chand — Beacon of Hope</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #101828;
+            --surface: #1D2939;
+            --accent: #F4D35E;
+            --secondary: #8ECAE6;
+            --text: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border: rgba(244, 211, 94, 0.18);
+            --border-gold: rgba(142, 202, 230, 0.15);
+            --glow: rgba(244, 211, 94, 0.12);
+            --glow-strong: rgba(244, 211, 94, 0.28);
+            --glow-gold: rgba(142, 202, 230, 0.2);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #0F0F0F;
-            color: #d0d0d0;
+            font-family: 'Instrument Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
+            overflow-x: hidden;
         }
+
+        /* Speed force energy streaks */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 40% at 20% 50%, rgba(244, 211, 94, 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 60% at 80% 30%, rgba(96, 165, 250, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
         .topnav {
             position: fixed;
             top: 0; left: 0; right: 0;
-            height: 60px;
-            background: linear-gradient(135deg, #0F0F0F 0%, #2A2A2A 100%);
-            border-bottom: 2px solid #C6A14A;
+            height: 64px;
+            background: rgba(8, 11, 18, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 40px;
+            padding: 0 48px;
             z-index: 100;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
         }
+
+        .topnav::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--secondary) 70%, transparent 100%);
+        }
+
         .topnav .brand {
-            color: #C6A14A;
+            color: var(--text);
+            font-family: 'Syne', sans-serif;
             font-size: 1.1em;
-            font-weight: 600;
-            letter-spacing: 1px;
+            font-weight: 800;
+            letter-spacing: 2px;
         }
-        .topnav nav { display: flex; gap: 10px; }
+
+        .topnav .brand span { color: var(--accent); }
+
+        .topnav nav { display: flex; gap: 6px; }
+
         .topnav nav a {
-            color: #C6A14A;
+            color: var(--text-muted);
             text-decoration: none;
-            padding: 8px 18px;
-            border-radius: 8px;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 0.88em;
+            font-weight: 500;
+            transition: all 0.2s ease;
             border: 1px solid transparent;
             cursor: pointer;
         }
+
         .topnav nav a:hover,
         .topnav nav a.active {
-            background: #7A0F1B;
-            color: #C6A14A;
-            border-color: #A83C1D;
+            background: var(--glow);
+            color: var(--accent);
+            border-color: var(--border);
         }
+
         .main {
-            margin-top: 60px;
-            padding: 50px 40px;
-            max-width: 1200px;
+            margin-top: 64px;
+            padding: 48px 40px;
+            max-width: 1100px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+            z-index: 1;
         }
+
         .page-section { display: none; }
-        .page-section.active { display: block; }
+        .page-section.active { display: block; animation: fadeUp 0.35s ease; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HEADER — bold, asymmetric */
         header {
-            text-align: center;
-            padding: 80px 40px;
-            background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
+            padding: 80px 50px 70px;
+            background: var(--surface);
             border-radius: 20px;
-            margin-bottom: 35px;
-            border: 2px solid #C6A14A;
-            box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
+            margin-bottom: 28px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 40px;
         }
-        h1 {
-            font-size: 3.5em;
-            color: #C6A14A;
-            margin-bottom: 15px;
+
+        header .header-left { position: relative; z-index: 1; }
+
+        header::before {
+            content: '';
+            position: absolute;
+            right: -40px; top: -40px;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(255, 77, 77, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary), transparent);
+        }
+
+        .header-badge {
+            background: rgba(255, 77, 77, 0.1);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            font-size: 0.75em;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 4px;
             letter-spacing: 2px;
-            font-weight: 700;
-        }
-        .tagline { font-size: 1.4em; color: #d0d0d0; margin-bottom: 15px; }
-        .status {
-            color: #C6A14A;
-            font-size: 1.2em;
-            margin-top: 20px;
-            padding: 10px 25px;
-            background: rgba(122, 15, 27, 0.4);
-            border-radius: 25px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
             display: inline-block;
-            border: 1px solid #A83C1D;
+            font-family: 'JetBrains Mono', monospace;
         }
-        .section {
-            background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
-            padding: 40px;
-            margin-bottom: 35px;
-            border-radius: 20px;
-            border: 2px solid #C6A14A;
-            border-left: 6px solid #C6A14A;
-            border-right: 6px solid #C6A14A;
-            box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 4.2em;
+            color: var(--text);
+            letter-spacing: -1px;
+            line-height: 1.05;
+            margin-bottom: 14px;
+            font-weight: 800;
         }
-        h2 {
-            color: #C6A14A;
-            margin-bottom: 25px;
-            font-size: 2.2em;
-            border-bottom: 3px solid #A83C1D;
-            padding-bottom: 15px;
-            letter-spacing: 1px;
+
+        h1 .highlight { color: var(--accent); }
+
+        .tagline {
+            font-size: 1.05em;
+            color: var(--text-muted);
+            margin-bottom: 28px;
         }
-        .section p { color: #d0d0d0; }
-        .section-title {
-            color: #C6A14A;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            border-bottom: 3px solid #A83C1D;
-            padding-bottom: 15px;
-            letter-spacing: 1px;
-        }
-        .log-entry {
-            background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid #C6A14A;
-            border-left: 5px solid #C6A14A;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
-        }
-        .log-entry:hover {
-            border-color: #A83C1D;
-            border-left-color: #C6A14A;
-            box-shadow: 0 6px 25px rgba(168, 60, 29, 0.2);
-            transform: translateY(-2px);
-        }
-        .log-entry-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-            gap: 15px;
-        }
-        .log-entry .log-date {
-            color: #A83C1D;
+
+        .status {
+            color: var(--bg);
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
             font-size: 0.82em;
-            font-family: monospace;
-            letter-spacing: 0.5px;
+            font-weight: 700;
+            padding: 10px 24px;
+            border-radius: 6px;
+            display: inline-block;
+            letter-spacing: 1px;
         }
-        .log-entry h3 { color: #C6A14A; font-size: 1.2em; margin-bottom: 10px; }
-        .log-entry p { color: #d0d0d0; font-size: 0.95em; line-height: 1.7; }
+
+        .header-icon {
+            font-size: 8em;
+            opacity: 0.15;
+            line-height: 1;
+            user-select: none;
+        }
+
+        /* SECTIONS */
+        .section {
+            background: var(--surface);
+            padding: 38px 40px;
+            margin-bottom: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 3px; height: 100%;
+            background: linear-gradient(180deg, var(--accent), var(--secondary));
+        }
+
+        h2, .section-title {
+            font-family: 'Syne', sans-serif;
+            color: var(--text);
+            margin-bottom: 22px;
+            font-size: 1.7em;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 14px;
+        }
+
+        h2 span, .section-title span { color: var(--accent); }
+
+        .section p { color: var(--text-muted); font-size: 0.96em; }
+        .section p + p { margin-top: 12px; }
+
+        /* LOGS */
+        .log-entry {
+            background: rgba(251, 191, 36, 0.03);
+            padding: 26px 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 16px;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .log-entry::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 60px; height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 0 12px 0 0;
+        }
+
+        .log-entry:hover {
+            border-color: rgba(244, 211, 94, 0.3);
+            background: rgba(244, 211, 94, 0.05);
+            transform: translateX(6px);
+        }
+
+        .log-date {
+            color: var(--secondary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76em;
+            margin-bottom: 8px;
+        }
+
+        .log-entry h3 { color: var(--text); font-family: 'Syne', sans-serif; font-size: 1.05em; margin-bottom: 10px; font-weight: 600; }
+        .log-entry h3 a { color: inherit; text-decoration: none; transition: color 0.2s; }
+        .log-entry h3 a:hover { color: var(--accent); }
+        .log-entry p { color: var(--text-muted); font-size: 0.92em; }
+        .log-entry .read-more { color: var(--accent); text-decoration: none; font-size: 0.84em; margin-top: 12px; display: inline-block; font-weight: 600; }
+
+        /* SKILLS */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+            gap: 18px;
+            margin-top: 8px;
         }
+
         .skill-card {
-            background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid #C6A14A;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
+            background: rgba(251, 191, 36, 0.03);
+            padding: 26px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.25s ease;
+            position: relative;
         }
+
         .skill-card:hover {
-            border-color: #C6A14A;
-            box-shadow: 0 6px 25px rgba(198, 161, 74, 0.15);
+            border-color: rgba(244, 211, 94, 0.25);
+            background: rgba(244, 211, 94, 0.07);
             transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(244, 211, 94, 0.06);
         }
-        .skill-card h4 { color: #C6A14A; font-size: 1.1em; margin-bottom: 10px; }
-        .skill-card p { color: #d0d0d0; font-size: 0.95em; }
-        .social-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
+
+        .skill-card h4 { color: var(--accent); font-size: 0.95em; margin-bottom: 10px; font-family: 'Syne', sans-serif; font-weight: 700; }
+        .skill-card p { color: var(--text-muted); font-size: 0.89em; }
+
+        /* CONTACT */
+        .social-links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+
         .social-links a {
-            color: #C6A14A;
+            color: var(--text);
             text-decoration: none;
             padding: 12px 30px;
-            border: 2px solid #7A0F1B;
-            border-radius: 25px;
-            background: rgba(42, 42, 42, 0.5);
-            font-weight: 600;
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-weight: 500;
+            font-size: 0.9em;
+            transition: all 0.25s ease;
+            background: rgba(255, 77, 77, 0.05);
         }
+
         .social-links a:hover {
-            background: #7A0F1B;
-            color: #C6A14A;
-            border-color: #A83C1D;
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--glow-strong);
         }
+
+        /* QUOTES */
         .footer-quotes {
-            background: linear-gradient(135deg, #0F0F0F 0%, #7A0F1B 100%);
-            padding: 40px;
-            border-radius: 20px;
-            border: 2px solid #C6A14A;
-            margin-bottom: 35px;
-            box-shadow: 0 8px 25px rgba(122, 15, 27, 0.4);
+            background: var(--surface);
+            padding: 34px 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-gold);
+            margin-bottom: 24px;
+            position: relative;
         }
-        .footer-quotes p { font-style: italic; color: #C6A14A; margin-bottom: 12px; font-size: 1em; }
-        .copyright { text-align: center; color: #A83C1D; font-size: 0.85em; padding-bottom: 40px; }
+
+        .footer-quotes::before {
+            content: '❝';
+            position: absolute;
+            top: 16px; left: 28px;
+            font-size: 3em;
+            color: var(--secondary);
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .footer-quotes p { font-style: italic; color: var(--text-muted); margin-bottom: 10px; font-size: 0.93em; padding-left: 16px; border-left: 2px solid var(--secondary); }
+        .footer-quotes p + p { margin-top: 14px; }
+
+        .copyright { text-align: center; color: var(--text-muted); font-size: 0.82em; padding-bottom: 40px; }
+
         @media (max-width: 768px) {
             .topnav { padding: 0 20px; }
-            .topnav .brand { font-size: 0.9em; }
-            .topnav nav a { padding: 6px 10px; font-size: 0.8em; }
-            .main { padding: 30px 20px; }
-            h1 { font-size: 2.2em; }
-            .tagline { font-size: 1.1em; }
-            .section { padding: 25px; }
-            h2 { font-size: 1.8em; }
+            .topnav nav a { padding: 6px 12px; font-size: 0.82em; }
+            .main { padding: 28px 18px; }
+            header { grid-template-columns: 1fr; padding: 50px 30px; }
+            .header-icon { display: none; }
+            h1 { font-size: 2.8em; }
+            .section { padding: 26px 22px; }
         }
     </style>
 </head>
 <body>
     <div class="topnav">
-        <span class="brand">Barath Chand</span>
+        <span class="brand">Barath <span>Chand</span></span>
         <nav>
             <a class="active" onclick="showSection('home', this)">🏠 Home</a>
-            <a onclick="showSection('logs', this)">📅 Daily Logs</a>
+            <a onclick="showSection('logs', this)">📅 Logs</a>
             <a onclick="showSection('skills', this)">⚡ Skills</a>
             <a onclick="showSection('contact', this)">📬 Contact</a>
         </nav>
     </div>
 
     <div class="main">
-        <!-- HOME -->
         <div id="home" class="page-section active">
             <header>
-                <h1>Barath Chand</h1>
-                <p class="tagline">Aspiring Ethical Hacker | Cybersecurity Enthusiast</p>
-                <p class="status">🎓 BE Cybersecurity - 1st Year Student</p>
+                <div class="header-left">
+                    <span class="header-badge">// BE Cybersecurity · 1st Year</span>
+                    <h1>Barath<br><span class="highlight">Chand</span></h1>
+                    <p class="tagline">Aspiring Ethical Hacker · Cybersecurity Enthusiast</p>
+                    <span class="status">🎓 Currently Studying</span>
+                </div>
+                <div class="header-icon">⚡</div>
             </header>
             <div class="section">
                 <h2>About Me</h2>
                 <p>Welcome to my corner of the internet! I'm Barath Chand, a first-year BE Cybersecurity student with a passion for ethical hacking and digital security. My mission is to become a skilled ethical hacker who helps organizations protect themselves from cyber threats and make the digital world a safer place.</p>
-                <p style="margin-top: 15px;">I believe that cybersecurity is not just about breaking systems—it's about understanding them deeply enough to protect them. Every vulnerability discovered is an opportunity to build stronger defenses.</p>
+                <p>I believe that cybersecurity is not just about breaking systems—it's about understanding them deeply enough to protect them. Every vulnerability discovered is an opportunity to build stronger defenses.</p>
             </div>
             <div class="footer-quotes">
-                <p>"Sometimes the only way to move forward… is to revisit the things in your past that were holding you back." - Barry Allen (Flash)</p>
-                <p>"Ever tried. Ever failed. No matter. Try again. Fail again. Fail better." - Samuel Beckett</p>
+                <p>"Sometimes the only way to move forward… is to revisit the things in your past that were holding you back." — Barry Allen (Flash)</p>
+                <p>"Ever tried. Ever failed. No matter. Try again. Fail again. Fail better." — Samuel Beckett</p>
             </div>
             <p class="copyright">Building a safer digital future, one line of code at a time. Trust the process.</p>
         </div>
 
-        <!-- LOGS -->
         <div id="logs" class="page-section">
             <h2 class="section-title">📅 Daily Logs</h2>
-            <div id="logs-display">
-
-                <div class="log-entry">
-                    <div class="log-entry-header">
-                        <div>
-                            <div class="log-date">🕐 Sunday, 05 Apr 2026 — 10:58</div>
-                            <h3><a href="The Digest.html" style="color: #C6A14A; text-decoration: none;">The Digest — CipherHash</a></h3>
-                        </div>
-                    </div>
-                    <p>This is the third blog I'm putting out. It's about CipherHash, a hashing project my friend Avinash K. and I built as a college assignment. And yes — the blog is called The Digest for a reason.</p>
-                    <a href="The Digest.html" style="color: #A83C1D; text-decoration: none; font-size: 0.9em; margin-top: 10px; display: inline-block;">Read full entry →</a>
-                </div>
-
-                <div class="log-entry">
-                    <div class="log-entry-header">
-                        <div>
-                            <div class="log-date">🕐 Thursday, 21 Feb 2026 — 12:42</div>
-                            <h3><a href="Log archiviette.html" style="color: #C6A14A; text-decoration: none;">Archiviette - Three Idiots Who Know Nothing Try to Build Something</a></h3>
-                        </div>
-                    </div>
-                    <p>The title of this entry is given by one of my friend DK. We decided to build Archiviette, a student attendance and marks tracking system for our class...</p>
-                    <a href="Log archiviette.html" style="color: #A83C1D; text-decoration: none; font-size: 0.9em; margin-top: 10px; display: inline-block;">Read full entry →</a>
-                </div>
-
-                <div class="log-entry">
-                    <div class="log-entry-header">
-                        <div>
-                            <div class="log-date">🕐 Thursday, 19 Feb 2026 — 19:44</div>
-                            <h3>Entry 1</h3>
-                        </div>
-                    </div>
-                    <p>This is my first log. It was supposed to be written a long time ago, but I guess I'm only logging it now because of my laziness.</p>
-                </div>
-
+            <div class="log-entry">
+                <div class="log-date">🕐 Sunday, 05 Apr 2026 — 10:58</div>
+                <h3><a href="The Digest.html">The Digest — CipherHash</a></h3>
+                <p>This is the third blog I'm putting out. It's about CipherHash, a hashing project my friend Avinash K. and I built as a college assignment. And yes — the blog is called The Digest for a reason.</p>
+                <a href="The Digest.html" class="read-more">Read full entry →</a>
+            </div>
+            <div class="log-entry">
+                <div class="log-date">🕐 Thursday, 21 Feb 2026 — 12:42</div>
+                <h3><a href="Log archiviette.html">Archiviette - Three Idiots Who Know Nothing Try to Build Something</a></h3>
+                <p>The title of this entry is given by one of my friend DK. We decided to build Archiviette, a student attendance and marks tracking system for our class...</p>
+                <a href="Log archiviette.html" class="read-more">Read full entry →</a>
+            </div>
+            <div class="log-entry">
+                <div class="log-date">🕐 Thursday, 19 Feb 2026 — 19:44</div>
+                <h3>Entry 1</h3>
+                <p>This is my first log. It was supposed to be written a long time ago, but I guess I'm only logging it now because of my laziness.</p>
             </div>
         </div>
 
-        <!-- SKILLS -->
         <div id="skills" class="page-section">
             <h2 class="section-title">⚡ Skills & Learning</h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h4>🔐 Security Fundamentals</h4>
-                    <p>Building strong foundations in network security, cryptography, and security protocols.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>💻 Programming</h4>
-                    <p>Learning Python, C, and scripting for automation and security tools.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>🐧 Linux & Systems</h4>
-                    <p>Developing expertise in Linux systems, command line, and system administration.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>🎯 Penetration Testing</h4>
-                    <p>Exploring ethical hacking methodologies and penetration testing frameworks.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>🌐 Networking</h4>
-                    <p>Understanding TCP/IP, DNS, HTTP, firewalls and how networks communicate.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>🛡️ CTF Challenges</h4>
-                    <p>Practising on Capture The Flag challenges to sharpen problem solving skills.</p>
-                </div>
+                <div class="skill-card"><h4>🔐 Security Fundamentals</h4><p>Building strong foundations in network security, cryptography, and security protocols.</p></div>
+                <div class="skill-card"><h4>💻 Programming</h4><p>Learning Python, C, and scripting for automation and security tools.</p></div>
+                <div class="skill-card"><h4>🐧 Linux & Systems</h4><p>Developing expertise in Linux systems, command line, and system administration.</p></div>
+                <div class="skill-card"><h4>🎯 Penetration Testing</h4><p>Exploring ethical hacking methodologies and penetration testing frameworks.</p></div>
+                <div class="skill-card"><h4>🌐 Networking</h4><p>Understanding TCP/IP, DNS, HTTP, firewalls and how networks communicate.</p></div>
+                <div class="skill-card"><h4>🛡️ CTF Challenges</h4><p>Practising on Capture The Flag challenges to sharpen problem solving skills.</p></div>
             </div>
         </div>
 
-        <!-- CONTACT -->
         <div id="contact" class="page-section">
             <div class="section">
                 <h2>Get In Touch</h2>
