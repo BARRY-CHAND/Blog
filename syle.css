@@ -1,0 +1,63 @@
+html {
+    font-size: 22px;
+    color: black
+}
+
+body {
+    background-color: beige;
+}
+
+h1{
+    color: black;
+}
+h2{
+    color: brown;
+}
+
+h3{
+    color: rgb(114, 55, 55);
+}
+
+#start{
+    background-color: burlywood;
+}
+
+#TOC {
+    background-color: brown;
+    width: 550px;
+    margin:  auto;
+}
+
+#t1{
+    width: 300px;
+    margin-left: 100px;
+}
+
+.Sport {
+    background-color: burlywood;
+}
+
+#games {
+    background-color: burlywood;
+}
+
+#songs {
+    background-color: burlywood;
+}
+
+#movies {
+    background-color: burlywood;
+}
+
+.end{
+    background-color: burlywood;
+}
+
+a{
+    color:bisque;
+    text-decoration: none;
+}
+
+span{
+    background-color: black;
+}
