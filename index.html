@@ -1,458 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barath Chand — Beacon of Hope</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #101828;
-            --surface: #1D2939;
-            --accent: #F4D35E;
-            --secondary: #8ECAE6;
-            --text: #F8FAFC;
-            --text-muted: #94A3B8;
-            --border: rgba(244, 211, 94, 0.18);
-            --border-gold: rgba(142, 202, 230, 0.15);
-            --glow: rgba(244, 211, 94, 0.12);
-            --glow-strong: rgba(244, 211, 94, 0.28);
-            --glow-gold: rgba(142, 202, 230, 0.2);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Instrument Sans', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Speed force energy streaks */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 60% 40% at 20% 50%, rgba(244, 211, 94, 0.04) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 60% at 80% 30%, rgba(96, 165, 250, 0.03) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .topnav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            height: 64px;
-            background: rgba(8, 11, 18, 0.92);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 48px;
-            z-index: 100;
-        }
-
-        .topnav::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--secondary) 70%, transparent 100%);
-        }
-
-        .topnav .brand {
-            color: var(--text);
-            font-family: 'Syne', sans-serif;
-            font-size: 1.1em;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
-
-        .topnav .brand span { color: var(--accent); }
-
-        .topnav nav { display: flex; gap: 6px; }
-
-        .topnav nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-size: 0.88em;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
-            cursor: pointer;
-        }
-
-        .topnav nav a:hover,
-        .topnav nav a.active {
-            background: var(--glow);
-            color: var(--accent);
-            border-color: var(--border);
-        }
-
-        .main {
-            margin-top: 64px;
-            padding: 48px 40px;
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .page-section { display: none; }
-        .page-section.active { display: block; animation: fadeUp 0.35s ease; }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* HEADER — bold, asymmetric */
-        header {
-            padding: 80px 50px 70px;
-            background: var(--surface);
-            border-radius: 20px;
-            margin-bottom: 28px;
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: center;
-            gap: 40px;
-        }
-
-        header .header-left { position: relative; z-index: 1; }
-
-        header::before {
-            content: '';
-            position: absolute;
-            right: -40px; top: -40px;
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(255, 77, 77, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--secondary), transparent);
-        }
-
-        .header-badge {
-            background: rgba(255, 77, 77, 0.1);
-            border: 1px solid var(--border);
-            color: var(--accent);
-            font-size: 0.75em;
-            font-weight: 600;
-            padding: 8px 18px;
-            border-radius: 4px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-            display: inline-block;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: 4.2em;
-            color: var(--text);
-            letter-spacing: -1px;
-            line-height: 1.05;
-            margin-bottom: 14px;
-            font-weight: 800;
-        }
-
-        h1 .highlight { color: var(--accent); }
-
-        .tagline {
-            font-size: 1.05em;
-            color: var(--text-muted);
-            margin-bottom: 28px;
-        }
-
-        .status {
-            color: var(--bg);
-            background: linear-gradient(90deg, var(--accent), var(--secondary));
-            font-size: 0.82em;
-            font-weight: 700;
-            padding: 10px 24px;
-            border-radius: 6px;
-            display: inline-block;
-            letter-spacing: 1px;
-        }
-
-        .header-icon {
-            font-size: 8em;
-            opacity: 0.15;
-            line-height: 1;
-            user-select: none;
-        }
-
-        /* SECTIONS */
-        .section {
-            background: var(--surface);
-            padding: 38px 40px;
-            margin-bottom: 24px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 3px; height: 100%;
-            background: linear-gradient(180deg, var(--accent), var(--secondary));
-        }
-
-        h2, .section-title {
-            font-family: 'Syne', sans-serif;
-            color: var(--text);
-            margin-bottom: 22px;
-            font-size: 1.7em;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 14px;
-        }
-
-        h2 span, .section-title span { color: var(--accent); }
-
-        .section p { color: var(--text-muted); font-size: 0.96em; }
-        .section p + p { margin-top: 12px; }
-
-        /* LOGS */
-        .log-entry {
-            background: rgba(251, 191, 36, 0.03);
-            padding: 26px 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            margin-bottom: 16px;
-            transition: all 0.25s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .log-entry::after {
-            content: '';
-            position: absolute;
-            top: 0; right: 0;
-            width: 60px; height: 3px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            border-radius: 0 12px 0 0;
-        }
-
-        .log-entry:hover {
-            border-color: rgba(244, 211, 94, 0.3);
-            background: rgba(244, 211, 94, 0.05);
-            transform: translateX(6px);
-        }
-
-        .log-date {
-            color: var(--secondary);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.76em;
-            margin-bottom: 8px;
-        }
-
-        .log-entry h3 { color: var(--text); font-family: 'Syne', sans-serif; font-size: 1.05em; margin-bottom: 10px; font-weight: 600; }
-        .log-entry h3 a { color: inherit; text-decoration: none; transition: color 0.2s; }
-        .log-entry h3 a:hover { color: var(--accent); }
-        .log-entry p { color: var(--text-muted); font-size: 0.92em; }
-        .log-entry .read-more { color: var(--accent); text-decoration: none; font-size: 0.84em; margin-top: 12px; display: inline-block; font-weight: 600; }
-
-        /* SKILLS */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
-            gap: 18px;
-            margin-top: 8px;
-        }
-
-        .skill-card {
-            background: rgba(251, 191, 36, 0.03);
-            padding: 26px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            transition: all 0.25s ease;
-            position: relative;
-        }
-
-        .skill-card:hover {
-            border-color: rgba(244, 211, 94, 0.25);
-            background: rgba(244, 211, 94, 0.07);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(244, 211, 94, 0.06);
-        }
-
-        .skill-card h4 { color: var(--accent); font-size: 0.95em; margin-bottom: 10px; font-family: 'Syne', sans-serif; font-weight: 700; }
-        .skill-card p { color: var(--text-muted); font-size: 0.89em; }
-
-        /* CONTACT */
-        .social-links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
-
-        .social-links a {
-            color: var(--text);
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            font-weight: 500;
-            font-size: 0.9em;
-            transition: all 0.25s ease;
-            background: rgba(255, 77, 77, 0.05);
-        }
-
-        .social-links a:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--bg);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px var(--glow-strong);
-        }
-
-        /* QUOTES */
-        .footer-quotes {
-            background: var(--surface);
-            padding: 34px 40px;
-            border-radius: 16px;
-            border: 1px solid var(--border-gold);
-            margin-bottom: 24px;
-            position: relative;
-        }
-
-        .footer-quotes::before {
-            content: '❝';
-            position: absolute;
-            top: 16px; left: 28px;
-            font-size: 3em;
-            color: var(--secondary);
-            opacity: 0.2;
-            line-height: 1;
-        }
-
-        .footer-quotes p { font-style: italic; color: var(--text-muted); margin-bottom: 10px; font-size: 0.93em; padding-left: 16px; border-left: 2px solid var(--secondary); }
-        .footer-quotes p + p { margin-top: 14px; }
-
-        .copyright { text-align: center; color: var(--text-muted); font-size: 0.82em; padding-bottom: 40px; }
-
-        @media (max-width: 768px) {
-            .topnav { padding: 0 20px; }
-            .topnav nav a { padding: 6px 12px; font-size: 0.82em; }
-            .main { padding: 28px 18px; }
-            header { grid-template-columns: 1fr; padding: 50px 30px; }
-            .header-icon { display: none; }
-            h1 { font-size: 2.8em; }
-            .section { padding: 26px 22px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barath Chand | Personal Blog</title>
+  <meta name="description" content="Personal blog of Barath Chand featuring projects, writing, Linux customization, and learning journey.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="st2.css">
 </head>
 <body>
-    <div class="topnav">
-        <span class="brand">Barath <span>Chand</span></span>
-        <nav>
-            <a class="active" onclick="showSection('home', this)">🏠 Home</a>
-            <a onclick="showSection('logs', this)">📅 Logs</a>
-            <a onclick="showSection('skills', this)">⚡ Skills</a>
-            <a onclick="showSection('contact', this)">📬 Contact</a>
-        </nav>
+  <aside class="sidebar">
+    <div class="brand">
+      <h1>Barath Chand</h1>
+      <br>
+      <!--<p>Cybersecurity Student</p>-->
     </div>
 
-    <div class="main">
-        <div id="home" class="page-section active">
-            <header>
-                <div class="header-left">
-                    <span class="header-badge">// BE Cybersecurity · 1st Year</span>
-                    <h1>Barath<br><span class="highlight">Chand</span></h1>
-                    <p class="tagline">Aspiring Ethical Hacker · Cybersecurity Enthusiast</p>
-                    <span class="status">🎓 Currently Studying</span>
-                </div>
-                <div class="header-icon">⚡</div>
-            </header>
-            <div class="section">
-                <h2>About Me</h2>
-                <p>Welcome to my corner of the internet! I'm Barath Chand, a first-year BE Cybersecurity student with a passion for ethical hacking and digital security. My mission is to become a skilled ethical hacker who helps organizations protect themselves from cyber threats and make the digital world a safer place.</p>
-                <p>I believe that cybersecurity is not just about breaking systems—it's about understanding them deeply enough to protect them. Every vulnerability discovered is an opportunity to build stronger defenses.</p>
+    <nav aria-label="Primary Navigation">
+      <ul class="nav-list">
+        <li><a href="#home">Cortex</a></li>
+        <li><a href="#about">Identity</a></li>
+        <li><a href="#multiverse">Timeline</a></li>
+        <li><a href="logs.html">Time Vault</a></li>
+        <li><a href="#projects">Pipeline</a></li>
+        <li><a href="#skills">Meta Abilities</a></li>
+        <li><a href="#contact">Comms</a></li>
+      </ul>
+    </nav>
+
+    <footer class="sidebar-footer">
+      <p>Carpe diem.</p>
+    </footer>
+  </aside>
+
+  <main class="content">
+
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">WELCOME</p>
+        <!--<h2>Building, Breaking, Learning.</h2>-->
+        <h2>CARPE DIEM</h2>
+        <hr>
+        <p>
+          I'm Barath Chand, a cybersecurity student who enjoys Linux,
+          backend development, minimal web design, and creating projects
+          that teach me something new every day.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View Projects</a>
+          <a class="button secondary" href="#about">About Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <header class="section-header">
+        <h2>Cortex</h2>
+      </header>
+
+      <article class="card">
+        <p>
+          My journey into technology started with curiosity and quickly
+          evolved into a passion for Linux, cybersecurity, and software
+          development. I enjoy understanding how systems work, solving
+          problems, and building practical applications.
+        </p>
+
+        <p>
+          Outside academics, you'll usually find me experimenting with
+          Hyprland, reading documentation, exploring open-source projects,
+          or refining small personal ideas into polished creations.
+        </p>
+      </article>
+    </section>
+
+    <section id="multiverse" class="section multiverse-section">
+      <header class="section-header">
+        <h2>MULTIVERSE</h2>
+        <p class="multiverse-subtitle">
+          Every decision creates another timelines which exists in other Earths which is called Multiverse. These are the realities and timelines that
+          shaped who I am.
+        </p>
+      </header>
+
+      <div class="earth-list">
+
+        <details class="earth-card">
+          <summary class="earth-summary">
+            <span class="earth-arrow">&#9654;</span>
+            <span class="earth-tag">&#127760; Earth-001</span>
+            <span class="earth-year">2022</span>
+            <span class="earth-title">The Curious One</span>
+          </summary>
+          <div class="earth-content">
+            <p class="earth-desc">
+              This represents the beginning of my journey and the curiosity
+              that pushed me toward technology.
+            </p>
+
+            <div class="earth-block">
+              <h4>Mission</h4>
+              <p>Figure out why things work the way they do, one question at a time.</p>
             </div>
-            <div class="footer-quotes">
-                <p>"Sometimes the only way to move forward… is to revisit the things in your past that were holding you back." — Barry Allen (Flash)</p>
-                <p>"Ever tried. Ever failed. No matter. Try again. Fail again. Fail better." — Samuel Beckett</p>
+
+            <div class="earth-block">
+              <h4>Academic Stage</h4>
+              <p>CBSE 10th &mdash; 95%</p>
             </div>
-            <p class="copyright">Building a safer digital future, one line of code at a time. Trust the process.</p>
+
+            <div class="earth-block">
+              <h4>Skills Unlocked</h4>
+              <p>Basic computer literacy, early exposure to logic and problem solving.</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>Lessons Learned</h4>
+              <p>Curiosity is a compass &mdash; following it consistently leads somewhere worthwhile.</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>Status</h4>
+              <p>Completed</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="earth-card">
+          <summary class="earth-summary">
+            <span class="earth-arrow">&#9654;</span>
+            <span class="earth-tag">&#127760; Earth-002</span>
+            <span class="earth-year">2024&ndash;2025</span>
+            <span class="earth-title">The Explorer</span>
+          </summary>
+          <div class="earth-content">
+            <p class="earth-desc">
+              This Earth represents exploration and experimentation &mdash;
+              learning programming, Linux, participating in hackathons, and
+              discovering different technologies.
+            </p>
+
+            <div class="earth-block">
+              <h4>Mission</h4>
+              <p>Go wide before going deep &mdash; try enough things to know what's actually worth mastering.</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>Academic Stage</h4>
+              <p>CBSE 11th &mdash; 93.8%</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>Technologies Explored</h4>
+              <p>Python, basic Java, HTML/CSS/JS, Linux (CachyOS, Hyprland), FastAPI.</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>New Interests</h4>
+              <p>Cybersecurity, ethical hacking, Linux customization, backend development.</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>Milestones</h4>
+              <p>Built CipherHash, and contributed to MedBridge and Archiviette during hackathons.</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>Status</h4>
+              <p>Completed</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="earth-card">
+          <summary class="earth-summary">
+            <span class="earth-arrow">&#9654;</span>
+            <span class="earth-tag">&#127760; Earth-003</span>
+            <span class="earth-year">Present</span>
+            <span class="earth-title">The Builder</span>
+          </summary>
+          <div class="earth-content">
+            <p class="earth-desc">
+              This Earth represents becoming a Cybersecurity student and
+              actively building projects, improving skills, and contributing
+              to my future career.
+            </p>
+
+            <div class="earth-block">
+              <h4>Mission</h4>
+              <p>Turn curiosity and exploration into real, working systems &mdash; and get closer to becoming an ethical hacker.</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>Current Education</h4>
+              <p>BE Cybersecurity &mdash; 1st Year, Pursuing.</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>Projects</h4>
+              <p>Personal portfolio, The Hash Post blog, CipherHash, MedBridge, Archiviette.</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>Skills Being Developed</h4>
+              <p>Linux internals, network security fundamentals, penetration testing basics, backend development with FastAPI.</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>Current Objectives</h4>
+              <p>Build a strong security foundation while shipping projects that teach something new every time.</p>
+            </div>
+
+            <div class="earth-block">
+              <h4>Status</h4>
+              <p>Active</p>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <header class="section-header">
+        <h2>Pipeline</h2>
+      </header>
+
+      <div class="grid">
+
+        <article class="project-card">
+          <h3>CipherHash</h3>
+          <p>
+            A lightweight web application that generates secure SHA-256
+            hashes using a clean interface built with simple web
+            technologies.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <h3>Medication Reminder</h3>
+          <p>
+            A healthcare assistant designed to manage reminders, monitor
+            adherence, and organize prescriptions with a clear workflow.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <h3>Archiviette</h3>
+          <p>
+            An attendance management system focused on simplifying record
+            keeping while providing an intuitive experience for users.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <header class="section-header">
+        <h2>Meta Abilities</h2>
+      </header>
+
+      <div class="skills">
+
+        <div class="skill">
+          <h3>Programming</h3>
+          <p>Python, Java, HTML, CSS</p>
         </div>
 
-        <div id="logs" class="page-section">
-            <h2 class="section-title">📅 Daily Logs</h2>
-            <div class="log-entry">
-                <div class="log-date">🕐 Tuesday, 09 Jun 2026 — 12:00</div>
-                <h3><a href="Fav.html">My Favs — Cricket, Games, Songs & Films</a></h3>
-                <p>A personal log where I list out my favourite things — from cricket and Red Dead Redemption to Telugu, Tamil, and English songs and movies.</p>
-                <a href="Fav.html" class="read-more">Read full entry →</a>
-            </div>
-            <div class="log-entry">
-                <div class="log-date">🕐 Sunday, 05 Apr 2026 — 10:58</div>
-                <h3><a href="The Digest.html">The Digest — CipherHash</a></h3>
-                <p>This is the third blog I'm putting out. It's about CipherHash, a hashing project my friend Avinash K. and I built as a college assignment. And yes — the blog is called The Digest for a reason.</p>
-                <a href="The Digest.html" class="read-more">Read full entry →</a>
-            </div>
-            <div class="log-entry">
-                <div class="log-date">🕐 Thursday, 21 Feb 2026 — 12:42</div>
-                <h3><a href="Log archiviette.html">Archiviette - Three Idiots Who Know Nothing Try to Build Something</a></h3>
-                <p>The title of this entry is given by one of my friend DK. We decided to build Archiviette, a student attendance and marks tracking system for our class...</p>
-                <a href="Log archiviette.html" class="read-more">Read full entry →</a>
-            </div>
-            <div class="log-entry">
-                <div class="log-date">🕐 Thursday, 19 Feb 2026 — 19:44</div>
-                <h3>Entry 1</h3>
-                <p>This is my first log. It was supposed to be written a long time ago, but I guess I'm only logging it now because of my laziness.</p>
-            </div>
+        <div class="skill">
+          <h3>Operating Systems</h3>
+          <p>Linux, Windows</p>
         </div>
 
-        <div id="skills" class="page-section">
-            <h2 class="section-title">⚡ Skills & Learning</h2>
-            <div class="skills-grid">
-                <div class="skill-card"><h4>🔐 Security Fundamentals</h4><p>Building strong foundations in network security, cryptography, and security protocols.</p></div>
-                <div class="skill-card"><h4>💻 Programming</h4><p>Learning Python, C, and scripting for automation and security tools.</p></div>
-                <div class="skill-card"><h4>🐧 Linux & Systems</h4><p>Developing expertise in Linux systems, command line, and system administration.</p></div>
-                <div class="skill-card"><h4>🎯 Penetration Testing</h4><p>Exploring ethical hacking methodologies and penetration testing frameworks.</p></div>
-                <div class="skill-card"><h4>🌐 Networking</h4><p>Understanding TCP/IP, DNS, HTTP, firewalls and how networks communicate.</p></div>
-                <div class="skill-card"><h4>🛡️ CTF Challenges</h4><p>Practising on Capture The Flag challenges to sharpen problem solving skills.</p></div>
-            </div>
+        <div class="skill">
+          <h3>Development</h3>
+          <p>Git, GitHub, FastAPI, VS Code</p>
         </div>
 
-        <div id="contact" class="page-section">
-            <div class="section">
-                <h2>Get In Touch</h2>
-                <p>I'm always excited to connect with fellow cybersecurity enthusiasts, students, and professionals. Whether you want to share knowledge, collaborate on projects, or just chat about security trends, feel free to reach out!</p>
-                <p style="margin-top: 15px; font-style: italic;">⚡ Don't try to reach me through phone calls, cause there is a reason 😎</p>
-                <div class="social-links">
-                    <a href="mailto:barathchandp@gmail.com">📧 Email</a>
-                    <a href="https://github.com/BARRY-CHAND/">💻 GitHub</a>
-                </div>
-            </div>
+        <div class="skill">
+          <h3>Interests</h3>
+          <p>
+            Cybersecurity, Linux Customization, Backend Development,
+            Open Source, UI Design
+          </p>
         </div>
-    </div>
 
-    <script>
-        function showSection(id, el) {
-            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.topnav nav a').forEach(a => a.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            el.classList.add('active');
-        }
-    </script>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <header class="section-header">
+        <h2>Comms</h2>
+      </header>
+
+      <details class="breach-card">
+        <summary class="breach-summary">
+          <span class="breach-arrow">&#9654;</span>
+          <span class="breach-label">&#9889; Open a Breach</span>
+        </summary>
+
+        <div class="breach-content">
+          <p class="breach-status">Breach Established &mdash; Communication Channels Available</p>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <span class="contact-icon">&#128187;</span>
+              <div class="contact-method-text">
+                <h4>GitHub</h4>
+                <p>Explore my repositories and projects.</p>
+              </div>
+              <a href="https://github.com/BARRY-CHAND/" class="social-link" target="_blank" rel="noopener">Visit</a>
+            </div>
+
+            <div class="contact-method">
+              <span class="contact-icon">&#128231;</span>
+              <div class="contact-method-text">
+                <h4>Email</h4>
+                <p>Reach me directly for collaborations or opportunities.</p>
+              </div>
+              <a href="mailto:barathchandp@gmail.com" class="social-link">Send</a>
+            </div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+  </main>
+
+
 </body>
 </html>
