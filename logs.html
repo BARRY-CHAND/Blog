@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hash Post | Barath Chand</title>
+  <meta name="description" content="Log entries and write-ups from Barath Chand's projects and learning journey.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="st.css">
+  <style>
+    body.logs-page {
+      display: block;
+    }
+
+    .logs-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+    }
+
+    .logs-header {
+      margin-bottom: 3rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      transition: color var(--transition);
+    }
+
+    .back-link:hover {
+      color: #f0b454;
+    }
+
+    .logs-header h1 {
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      color: #f0b454;
+      margin-bottom: 0.75rem;
+    }
+
+    .logs-header p {
+      color: var(--muted);
+    }
+
+    .log-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .log-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+
+    .log-date {
+      font-size: 0.8rem;
+      letter-spacing: 0.05rem;
+      color: var(--accent-light);
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+    }
+
+    .log-card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .log-card h2 a {
+      transition: color var(--transition);
+    }
+
+    .log-card h2 a:hover {
+      color: #f0b454;
+    }
+
+    .log-card p.log-excerpt {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .read-more {
+      display: inline-block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #f0b454;
+      position: relative;
+      padding-left: 1.1rem;
+      transition: padding-left var(--transition), letter-spacing var(--transition);
+    }
+
+    .read-more::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 2px;
+      background: #f0b454;
+      transition: width var(--transition);
+    }
+
+    .read-more:hover {
+      padding-left: 1.6rem;
+      letter-spacing: 0.4px;
+    }
+
+    .read-more:hover::before {
+      width: 1rem;
+    }
+
+    .log-card.no-link h2 {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body class="logs-page">
+  <div class="logs-wrap">
+
+    <header class="logs-header">
+      <a href="index2.html" class="back-link">&larr; Back to Home</a>
+      <h1>The Hash Post</h1>
+      <p>A running log of things I've built, broken, and learned along the way.</p>
+    </header>
+
+    <div class="log-list">
+
+      <article class="log-card">
+        <p class="log-date">Tuesday, 09 Jun 2026</p>
+        <h2><a href="Fav.html">My Favs — Cricket, Games, Songs &amp; Films</a></h2>
+        <p class="log-excerpt">
+          A personal log where I list out my favourite things — from cricket
+          and Red Dead Redemption to Telugu, Tamil, and English songs and movies.
+        </p>
+        <a href="Fav.html" class="read-more">Read full entry &rarr;</a>
+      </article>
+
+      <article class="log-card">
+        <p class="log-date">Sunday, 05 Apr 2026</p>
+        <h2><a href="The Digest.html">The Digest — CipherHash</a></h2>
+        <p class="log-excerpt">
+          The third blog I put out, about CipherHash — a hashing project my
+          friend Avinash K. and I built as a college assignment. And yes, the
+          blog is called The Digest for a reason.
+        </p>
+        <a href="The Digest.html" class="read-more">Read full entry &rarr;</a>
+      </article>
+
+      <article class="log-card">
+        <p class="log-date">Thursday, 21 Feb 2026</p>
+        <h2><a href="Log archiviette.html">Archiviette — Three Idiots Who Know Nothing Try to Build Something</a></h2>
+        <p class="log-excerpt">
+          The title of this entry was given by my friend DK. We decided to
+          build Archiviette, a student attendance and marks tracking system
+          for our class.
+        </p>
+        <a href="Log archiviette.html" class="read-more">Read full entry &rarr;</a>
+      </article>
+
+      <article class="log-card no-link">
+        <p class="log-date">Thursday, 19 Feb 2026</p>
+        <h2>Entry 1</h2>
+        <p class="log-excerpt">
+          This is my first log. It was supposed to be written a long time
+          ago, but I guess I'm only logging it now because of my laziness.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</body>
+</html>
