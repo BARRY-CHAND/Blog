@@ -178,6 +178,7 @@ img {
 
 .hero-text {
   max-width: 1000px;
+  text-align: justify;
 }
 
 .hero hr{
@@ -202,6 +203,13 @@ img {
 .hero p {
   color: var(--muted);
   margin-bottom: 2rem;
+}
+
+.quotes{
+  color: #f0b454;
+  font-size: 1.2rem;
+  font-family: "Cinzel", serif;
+  font-weight:500;
 }
 
 .hero-actions {
