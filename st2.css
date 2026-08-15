@@ -195,9 +195,10 @@ img {
 
 .hero h2 {
   color: #f0b454;
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  /*font-size: clamp(2.8rem, 6vw, 4.5rem);*/
+  font-size: clamp(2.4rem, 6vw, 4.1rem);
   margin-bottom: 1.5rem;
-  line-height: 1.15;
+  line-height: 1.05;
 }
 
 .hero p {
@@ -263,7 +264,7 @@ img {
 .section-header h2 {
   font-size: 2.2rem;
   color: #F5F5DC/*blanchedalmond #f0b454*/;
-  
+
 }
 
 .card,
