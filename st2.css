@@ -174,7 +174,7 @@ img {
 
 .hero-text {
   max-width: 1000px;
-  text-align: justify;
+
 }
 
 .hero hr{
@@ -200,6 +200,7 @@ img {
 .hero p {
   color: var(--muted);
   margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .quotes{
@@ -548,14 +549,17 @@ img {
     height: auto;
     border-right: none;
     border-bottom: 3px solid #f0b454;
-    padding: 1.5rem;
+    padding: 1.2rem;
   }
 
+  .sidebar h1{
+      padding: 1rem 1rem 0rem 1rem;
+  }
   .nav-list {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 0.2rem;
   }
 
   .nav-list li + li {
@@ -563,11 +567,13 @@ img {
   }
 
   .sidebar-footer {
-    margin-top: 2rem;
+    margin-top: 0.2rem;
+    padding: 1rem 0rem 0rem 1rem;
   }
 
   .content {
-    padding: 2rem 1.5rem;
+    /*padding: 2rem 1.5rem;*/
+    padding: 1rem;
   }
 
   .hero {
@@ -576,12 +582,16 @@ img {
   }
 
   .hero-actions {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
+    margin-right: 2rem;
+    /*padding: 1rem;*/
   }
 
   .button {
     width: fit-content;
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
 }
 
