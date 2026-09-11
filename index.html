@@ -7,14 +7,15 @@
   <meta name="description" content="Personal blog of Barath Chand featuring projects, writing, Linux customization, and learning journey.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="st2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href = "st.css">
+
 </head>
+
 <body>
   <aside class="sidebar">
     <div class="brand">
       <h1>Barath Chand</h1>
-      <br>
       <!--<p>Cybersecurity Student</p>-->
     </div>
 
@@ -29,6 +30,22 @@
         <li><a href="#contact">Comms</a></li>
       </ul>
     </nav>
+
+    <div class="sidebar-extra">
+      <div class="sidebar-social">
+        <a href="https://github.com/BARRY-CHAND/" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+        </a>
+        <a href="mailto:barathchandp@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 6-10 7L2 6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
 
     <footer class="sidebar-footer">
       <p>Carpe diem.</p>
@@ -104,7 +121,7 @@
         <details class="earth-card">
           <summary class="earth-summary">
             <span class="earth-arrow">&#9654;</span>
-            <span class="earth-tag">&#127760; Earth-001</span>
+            <span class="earth-tag">Earth-001</span>
             <span class="earth-year">2022&ndash;2023</span>
             <span class="earth-title">The Curious One</span>
           </summary>
@@ -144,7 +161,7 @@
         <details class="earth-card">
           <summary class="earth-summary">
             <span class="earth-arrow">&#9654;</span>
-            <span class="earth-tag">&#127760; Earth-002</span>
+            <span class="earth-tag">Earth-002</span>
             <span class="earth-year">2024&ndash;2025</span>
             <span class="earth-title">The Explorer</span>
           </summary>
@@ -190,7 +207,7 @@
         <details class="earth-card">
           <summary class="earth-summary">
             <span class="earth-arrow">&#9654;</span>
-            <span class="earth-tag">&#127760; Earth-003</span>
+            <span class="earth-tag">Earth-003</span>
             <span class="earth-year">Present</span>
             <span class="earth-title">The Builder</span>
           </summary>
@@ -279,21 +296,44 @@
       <div class="skills">
 
         <div class="skill">
+          <span class="skill-index">01</span>
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
           <h3>Programming</h3>
           <p>Python, Java, HTML, CSS, C Programming</p>
         </div>
 
         <div class="skill">
+          <span class="skill-index">02</span>
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
           <h3>Operating Systems</h3>
           <p>Linux, Windows</p>
         </div>
 
         <div class="skill">
+          <span class="skill-index">03</span>
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="6" y1="3" x2="6" y2="15"></line>
+            <circle cx="18" cy="6" r="3"></circle>
+            <circle cx="6" cy="18" r="3"></circle>
+            <path d="M18 9a9 9 0 0 1-9 9"></path>
+          </svg>
           <h3>Development</h3>
           <p>Git, GitHub, FastAPI, NeoVim</p>
         </div>
 
         <div class="skill">
+          <span class="skill-index">04</span>
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
           <h3>Interests</h3>
           <p>
             Cybersecurity, Linux Customization, Backend Development,
@@ -314,7 +354,11 @@
 
         <a href="https://github.com/BARRY-CHAND/" class="comms-card" target="_blank" rel="noopener">
           <span class="comms-index">01</span>
-          <span class="comms-icon">&#128187;</span>
+          <span class="comms-icon">
+            <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+          </span>
           <h3>GitHub</h3>
           <p>Repositories, commits, and half-finished experiments.</p>
           <span class="comms-cta">Visit &rarr;</span>
@@ -322,7 +366,12 @@
 
         <a href="mailto:barathchandp@gmail.com" class="comms-card">
           <span class="comms-index">02</span>
-          <span class="comms-icon">&#128231;</span>
+          <span class="comms-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 6-10 7L2 6"></path>
+            </svg>
+          </span>
           <h3>Email</h3>
           <p>Collaborations, opportunities, direct line.</p>
           <span class="comms-cta">Send &rarr;</span>
@@ -336,3 +385,4 @@
 
 </body>
 </html>
+
