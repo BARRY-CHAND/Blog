@@ -754,7 +754,6 @@ img {
     display: none;
   }
 
-  /* Thicker Speed Force Gold accent line after the brand section on mobile */
   .brand {
     padding: 0 0 0.45rem 0;
     margin-bottom: 0;
@@ -773,7 +772,7 @@ img {
     min-height: 36px;
   }
 
-  /* Single-row horizontal scrollable navigation */
+  /* Single-row horizontal scrollable navigation with HIDDEN scrollbar */
   .nav-list {
     display: flex;
     flex-direction: row;
@@ -781,23 +780,16 @@ img {
     overflow-x: auto;
     gap: 0.45rem;
     margin-top: 0;
-    padding-bottom: 0.35rem;
+    padding-bottom: 0.15rem;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent) rgba(43, 36, 28, 0.08);
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
   }
 
   .nav-list::-webkit-scrollbar {
-    height: 3px;
-    display: block;
-  }
-
-  .nav-list::-webkit-scrollbar-track {
-    background: rgba(43, 36, 28, 0.08);
-  }
-
-  .nav-list::-webkit-scrollbar-thumb {
-    background: var(--accent);
+    display: none; /* Chrome, Safari, Opera */
+    width: 0;
+    height: 0;
   }
 
   .nav-list li {
