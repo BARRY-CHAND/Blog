@@ -78,6 +78,8 @@ img {
   display: block;
 }
 
+/* ---------- Desktop Sidebar ---------- */
+
 .sidebar {
   position: sticky;
   top: 0;
@@ -359,6 +361,12 @@ img {
   color: var(--primary-accent);
 }
 
+/* Compact padding variation for newly added buttons */
+.button-compact {
+  padding: 0.65rem 1.3rem;
+  font-size: 0.9rem;
+}
+
 .section {
   padding: 3rem 0;
 }
@@ -375,6 +383,15 @@ img {
   color: var(--primary-accent);
 }
 
+/* Header layout for Pipeline with right-aligned button */
+.pipeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .card,
 .project-card,
 .skill {
@@ -386,6 +403,11 @@ img {
   box-shadow: 0 10px 30px var(--shadow);
   border-left: 3px solid var(--accent);
   transition: border-left-color var(--transition), border-right-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+/* Reserved right spacing so text never overlaps top-right badge */
+.vault-card {
+  padding-right: 6.5rem;
 }
 
 .skill {
@@ -411,6 +433,10 @@ img {
 
 .card p + p {
   margin-top: 1rem;
+}
+
+.card-actions {
+  margin-top: 1.5rem;
 }
 
 .grid {
@@ -455,7 +481,8 @@ img {
 
 .project-card:hover .project-index,
 .skill:hover .skill-index,
-.comms-card:hover .comms-index {
+.comms-card:hover .comms-index,
+.vault-card:hover .project-index {
   background: var(--primary-accent);
   color: #FFFFFF;
 }
@@ -486,9 +513,10 @@ img {
   }
 }
 
-/* ---------- Multiverse (Academic Experience) ---------- */
+/* ---------- Multiverse & Time Vault Subtitles ---------- */
 
-.multiverse-subtitle {
+.multiverse-subtitle,
+.vault-subtitle {
   color: var(--muted);
   font-style: italic;
   margin-top: 0.5rem;
@@ -754,11 +782,12 @@ img {
     display: none;
   }
 
+  /* Gold line below name/avatar: dialed down to 1.5px */
   .brand {
     padding: 0 0 0.45rem 0;
     margin-bottom: 0;
-    border-bottom: 2.5px solid var(--highlight);
-    box-shadow: 0 1px 4px rgba(240, 180, 84, 0.25);
+    border-bottom: 1.5px solid var(--highlight);
+    box-shadow: 0 1px 2px rgba(240, 180, 84, 0.18);
   }
 
   .brand h1 {
@@ -772,7 +801,7 @@ img {
     min-height: 36px;
   }
 
-  /* Single-row horizontal scrollable navigation with HIDDEN scrollbar */
+  /* Horizontal swipeable nav: completely hidden scrollbar */
   .nav-list {
     display: flex;
     flex-direction: row;
@@ -782,14 +811,14 @@ img {
     margin-top: 0;
     padding-bottom: 0.15rem;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .nav-list::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-    width: 0;
-    height: 0;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 
   .nav-list li {
@@ -850,6 +879,16 @@ img {
     margin-right: 2rem;
     margin-left: 2rem;
   }
+
+  /* Prevents text from overlapping the badge in mobile view */
+  .vault-card {
+    padding-right: 5.5rem;
+  }
+
+  .vault-card .project-index {
+    top: 1rem;
+    right: 1rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -869,5 +908,9 @@ img {
   .project-card,
   .skill {
     padding: 1.25rem;
+  }
+
+  .vault-card {
+    padding-right: 5.25rem;
   }
 }
