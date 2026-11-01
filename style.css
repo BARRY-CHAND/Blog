@@ -37,7 +37,7 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Lora", Georgia, serif;
   background: var(--bg);
   color: var(--text);
   display: flex;
@@ -223,7 +223,7 @@ img {
   position: relative;
   display: inline-block;
   padding: 0.35rem 0 0.35rem 1.15rem;
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Josefin Sans", system-ui, sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -833,7 +833,7 @@ img {
     white-space: nowrap;
     display: inline-block;
     padding: 0.35rem 0.75rem;
-    font-family: "JetBrains Mono", monospace;
+    font-family: "Josefin Sans", system-ui, sans-serif;
     font-size: 0.74rem;
     font-weight: 700;
     color: var(--primary-accent);
