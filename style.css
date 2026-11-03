@@ -286,7 +286,7 @@ img {
 }
 
 .hero-text h2 {
-  max-width: 710px;
+  max-width: 700px;
   background-color: var(--highlight);
   padding: 0.2rem;
 }
