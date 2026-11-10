@@ -5,26 +5,108 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Building My Own Neovim Config</title>
+	<link href="../style.css" rel="stylesheet">
 	<link href="log-style.css" rel="stylesheet">
 </head>
 
 <body>
-	<header>
-		<a href="../logs.html">Back to vault</a>
-	</header>
+	<main class="log-entry">
+		<a href="../logs.html" class="back-home">Back to vault</a>
+		<header class="log-entry-header">
+			<time class="log-timestamp" datetime="2026-11-10">10 Nov 2026</time>
+			<h1>Building My Own Neovim Config</h1>
+		</header>
 
-	<main>
-		<h2>Intro</h2>
-		<p>
-			This is log entry 4, being about me building my own Neovim config, and for those who don't know, its not essentially an easy thing to do. Its like trying to "fill this up with n elite cine reference". So this took like almost 4 days of my so called study holidays for sem.
-		</p>
+		<div class="log-body">
+			<h2>Intro</h2>
+			<p>
+				This is log entry 4, being about me building my own Neovim config. Neovim is a modern, extensible
+				terminal text editor and for those who don't know, it's not essentially an easy thing to do. It's like
+				trying to "fill this up with an elite cine reference". So this took almost 4 days of my so-called study
+				holidays for the semester.
+			</p>
 
-		<h2>For straters</h2>
-		<p>
-			This is what an starter config of Neovim looks like.
-		</p>
-		<br>
-		<img src="../pic/default.png" width="" height="" alt="">
+			<p>
+				First up looking Neovim can be overwhelming, and trust me using it will be a nightmare (speaking of
+				experience). But eventually you will adapt to it and will start to enjoy. So lets start with
+				<!-- TODO: replace # with the link to my config -->
+				<a href="#" target="_blank" rel="noopener">my config</a>
+			</p>
+			<br>
 
+			<h2>Food for thought</h2>
+			<p>
+				Before I thought of doing my own config, when I started with Neovim I was using a Neovim distro called
+				<a href="https://www.lazyvim.org" target="_blank" rel="noopener">LazyVim</a>, by folke, and then moved
+				on to <a href="https://nvchad.com" target="_blank" rel="noopener">NvChad</a>, as my friend Theo K
+				Laurent (Dorling) suggested it to me, saying he used it when he was using Neovim. After using that for
+				about 6 months, when I wanted to add some more plugins, I ran into a problem: I didn't know how to add
+				them. I watched some videos on adding those extras, and when I tried them, I realized that the file
+				structure of the Neovim distro is way different from a normal one. So I thought of designing, or rather
+				assembling, my own config.
+			</p>
 
-	
+			<h2>The plan</h2>
+			<p>
+				Core first, everything else after. Basic options and the plugin manager, then plugins one at a time, and
+				the NvChad look right at the end. The reason is simple: when something breaks, you know which layer did
+				it. As Oliver Queen (Arrow) says sometimes you have to run beore you can walk.
+			</p>
+			<p>
+				Most of what I learned came from these YouTubers, my own Harisson Wells (mentor) of tutorials:
+				<a href="https://www.youtube.com/@typecraft_dev" target="_blank" rel="noopener">Typecraft</a>,
+				<a href="https://www.youtube.com/@teej_dv" target="_blank" rel="noopener">TJ DeVries</a>
+				<a href="https://www.youtube.com/channel/UC65_CVnMw6hvPET_DRDg3GA" target="_blank"
+					rel="noopener">Tony</a> and mainly
+				<a href="https://www.youtube.com/@BreadOnPenguins" target="_blank" rel="noopener">Bread on Penguins</a>.
+				Go watch them. They explain it way better than I do.
+			</p>
+
+			<h2>The cast</h2>
+			<p>
+				I'm not going deep into each plugin. Think of plugins as lego blocks which combine to give a big lego
+				build. The plugins which I use inmy config are:
+			</p>
+			<ul>
+				<li>lazy.nvim, the plugin manager. The most important part where everything gets built from here</li>
+				<li>gruvbox, the colorscheme</li>
+				<li>telescope, a fuzzy finder for files and text.</li>
+				<li>treesitter, proper syntax highlighting</li>
+				<li>neo-tree, the file tree I was missing in the plain config</li>
+				<li>mason + nvim-lspconfig, language servers (Lua, C, TypeScript, HTML and CSS on the way)</li>
+				<li>nvim-cmp + LuaSnip, autocomplete and snippets</li>
+				<li>none-ls, formatting with stylua, black, isort and clang-format</li>
+				<li>alpha, the start screen</li>
+				<li>barbar, buffer tabs</li>
+				<li>which-key, gitsigns, autopairs and a floating terminal. Not the main heroes, but every plugins
+					improves the user experience.</li>
+			</ul>
+
+			<h2>Borrowing the NvChad look</h2>
+			<p>
+				I still liked how NvChad looked, so instead of going back to it, I pulled the UI parts into my own
+				config (the statusline, which-key and the rest) while trying to keep gruvbox for the code colors.
+				Basically an Arrowverse crossover: NvChad's looks in my universe, without its file structure. Hopefully
+				no Crisis this time (an elite reference 🤓😎).
+			</p>
+
+			<h2>What's next</h2>
+			<p>
+				A few things are on the list. DAP for debugging, which means breakpoints and stepping through code
+				inside Neovim, like Doctor Strange looking all possible futures in Titan in Avengers: Infinity War
+				(another reference😎). After that, nvim-lint for some languages and a bit of cleanup. A config like this
+				is never really finished. It's like upgrading and enhancing the legomodel i just built.
+			</p>
+
+			<h2>Final thoughts</h2>
+			<p>
+				Was it worth 4 days of holidays? Yeah. I know every file in it, and when it breaks I know where to look,
+				which was never true with a distro. Is it better than the million other configs out there? No. Will it
+				be useful for anything for my exams? No. Does it matter that I configured this to anyone? Maybe No. But
+				it's mine and I feel like "Tony Stark was able to built this in a cave, with a box of scrap."
+			</p>
+		</div>
+	</main>
+</body>
+
+</html>
