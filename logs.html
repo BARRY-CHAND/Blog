@@ -1,317 +1,362 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Time Vault | Barath Chand</title>
-  <meta name="description" content="Log entries and write-ups from Barath Chand's projects and learning journey.">
-  <link rel="icon" type="image/png" href="./pic/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-:root {
-  --bg: #E3D5BE;
-  --panel: #EDE3D0;
-  --accent: #9b1c1c;             /* Flash Crimson */
-  --accent-light: #c82333;       /* Speedster Red */
-  --primary-accent: #1E1C1A;     /* Warm Charcoal */
-  --highlight: #f0b454;          /* Speed Force Gold */
-  --text: #2B241C;
-  --muted: #6B5D48;
-  --border: #C9B594;
-  --shadow: rgba(43, 36, 28, 0.15);
-  --radius: 0px;
-  --transition: 0.25s ease;
-  --font-mono: "JetBrainsMono Nerd Font", "JetBrainsMono NF", "JetBrains Mono", monospace;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Time Vault | Barath Chand</title>
+    <meta
+      name="description"
+      content="Log entries and write-ups from Barath Chand's projects and learning journey."
+    />
+    <link rel="icon" type="image/png" href="./pic/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #e3d5be;
+        --panel: #ede3d0;
+        --accent: #9b1c1c;
+        /* Flash Crimson */
+        --accent-light: #c82333;
+        /* Speedster Red */
+        --primary-accent: #1e1c1a;
+        /* Warm Charcoal */
+        --highlight: #f0b454;
+        /* Speed Force Gold */
+        --text: #2b241c;
+        --muted: #6b5d48;
+        --border: #c9b594;
+        --shadow: rgba(43, 36, 28, 0.15);
+        --radius: 0px;
+        --transition: 0.25s ease;
+        --font-mono:
+          "JetBrainsMono Nerd Font", "JetBrainsMono NF", "JetBrains Mono",
+          monospace;
+      }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-::selection {
-  background: var(--highlight);
-  color: var(--primary-accent);
-}
+      ::selection {
+        background: var(--highlight);
+        color: var(--primary-accent);
+      }
 
-::-moz-selection {
-  background: var(--highlight);
-  color: var(--primary-accent);
-}
+      ::-moz-selection {
+        background: var(--highlight);
+        color: var(--primary-accent);
+      }
 
-html {
-  font-size: 110%;
-  scroll-behavior: smooth;
-  scroll-padding-top: 2rem;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+      html {
+        font-size: 110%;
+        scroll-behavior: smooth;
+        scroll-padding-top: 2rem;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
 
-body {
-  font-family: var(--font-mono);
-  background: var(--bg);
-  color: var(--text);
-  display: flex;
-  line-height: 1.7;
-}
+      body {
+        font-family: var(--font-mono);
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        line-height: 1.7;
+      }
 
-h1,
-h2,
-h3 {
-  font-family: "Cinzel", serif;
-  letter-spacing: 1px;
-}
+      h1,
+      h2,
+      h3 {
+        font-family: "Cinzel", serif;
+        letter-spacing: 1px;
+      }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-  outline: none;
-}
+      a {
+        color: inherit;
+        text-decoration: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+        outline: none;
+      }
 
-a:focus {
-  background: none !important;
-}
+      a:focus {
+        background: none !important;
+      }
 
-a:active {
-  background: none !important;
-  color: inherit;
-}
+      a:active {
+        background: none !important;
+        color: inherit;
+      }
 
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--highlight);
-  outline-offset: 3px;
-}
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--highlight);
+        outline-offset: 3px;
+      }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+      img {
+        max-width: 100%;
+        display: block;
+      }
 
-/* ---------- Main Layout ---------- */
+      /* ---------- Main Layout ---------- */
 
-.content {
-  flex: 1;
-  padding: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+      .content {
+        flex: 1;
+        padding: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-.logs-wrap {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem 0 3rem;
-}
+      .logs-wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1rem 0 3rem;
+      }
 
-.logs-header {
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 2px solid var(--accent);
-  box-shadow: 0 1px 0 0 var(--highlight);
-}
+      .logs-header {
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 2px solid var(--accent);
+        box-shadow: 0 1px 0 0 var(--highlight);
+      }
 
-.logs-header h1 {
-  font-size: clamp(2.2rem, 5vw, 3rem);
-  color: var(--primary-accent);
-  margin-bottom: 0.5rem;
-}
+      .logs-header h1 {
+        font-size: clamp(2.2rem, 5vw, 3rem);
+        color: var(--primary-accent);
+        margin-bottom: 0.5rem;
+      }
 
-.logs-header p {
-  color: var(--muted);
-  font-style: italic;
-  font-size: 0.95rem;
-}
+      .logs-header p {
+        color: var(--muted);
+        font-style: italic;
+        font-size: 0.95rem;
+      }
 
-.log-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+      .log-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
 
-.log-card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--radius);
-  position: relative;
-  padding: 1.75rem 2rem;
-  box-shadow: 0 10px 30px var(--shadow);
-  transition: border-left-color var(--transition), border-right-color var(--transition), transform var(--transition), box-shadow var(--transition);
-}
+      .log-card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        border-radius: var(--radius);
+        position: relative;
+        padding: 1.75rem 2rem;
+        box-shadow: 0 10px 30px var(--shadow);
+        transition:
+          border-left-color var(--transition),
+          border-right-color var(--transition),
+          transform var(--transition),
+          box-shadow var(--transition);
+      }
 
-.log-card:hover {
-  border-left: 4px solid var(--accent);
-  border-right: 3px solid var(--highlight);
-  box-shadow: 0 12px 30px var(--shadow), -2px 0 12px rgba(240, 180, 84, 0.2);
-  transform: translateY(-3px);
-}
+      .log-card:hover {
+        border-left: 4px solid var(--accent);
+        border-right: 3px solid var(--highlight);
+        box-shadow:
+          0 12px 30px var(--shadow),
+          -2px 0 12px rgba(240, 180, 84, 0.2);
+        transform: translateY(-3px);
+      }
 
-/* Date badge — highlighted like the "LOGS" tag */
-.log-date {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.05rem;
-  color: var(--primary-accent);
-  background: var(--highlight);
-  padding: 0.3rem 0.8rem;
-  margin-bottom: 0.9rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  line-height: 1.4;
-}
+      /* Date badge — highlighted like the "LOGS" tag */
+      .log-date {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        letter-spacing: 0.05rem;
+        color: var(--primary-accent);
+        background: var(--highlight);
+        padding: 0.3rem 0.8rem;
+        margin-bottom: 0.9rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 1.4;
+      }
 
-.log-card h2 {
-  font-size: 1.35rem;
-  margin-bottom: 0.75rem;
-  color: var(--primary-accent);
-}
+      .log-card h2 {
+        font-size: 1.35rem;
+        margin-bottom: 0.75rem;
+        color: var(--primary-accent);
+      }
 
-.log-card h2 a {
-  transition: color var(--transition);
-}
+      .log-card h2 a {
+        transition: color var(--transition);
+      }
 
-.log-card h2 a:hover {
-  color: var(--primary-accent);
-}
+      .log-card h2 a:hover {
+        color: var(--primary-accent);
+      }
 
-/* Whole card is clickable: the title link stretches over the card */
-.log-card h2 a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  cursor: pointer;
-}
+      /* Whole card is clickable: the title link stretches over the card */
+      .log-card h2 a::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        cursor: pointer;
+      }
 
-.log-card:hover h2 {
-  color: var(--accent);
-}
+      .log-card:hover h2 {
+        color: var(--accent);
+      }
 
-.log-card p.log-excerpt {
-  color: var(--muted);
-  margin-bottom: 1.25rem;
-}
+      .log-card p.log-excerpt {
+        color: var(--muted);
+        margin-bottom: 1.25rem;
+      }
 
-.read-more {
-  display: inline-block;
-  font-family: "Cinzel", serif;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--primary-accent);
-  position: relative;
-  padding-left: 1.2rem;
-  transition: padding-left var(--transition), color var(--transition), letter-spacing var(--transition);
-}
+      .read-more {
+        display: inline-block;
+        font-family: "Cinzel", serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--primary-accent);
+        position: relative;
+        padding-left: 1.2rem;
+        transition:
+          padding-left var(--transition),
+          color var(--transition),
+          letter-spacing var(--transition);
+      }
 
-.read-more::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 2px;
-  background: var(--highlight);
-  transition: width var(--transition);
-}
+      .read-more::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--highlight);
+        transition: width var(--transition);
+      }
 
-.read-more:hover {
-  color: var(--accent);
-  padding-left: 1.7rem;
-  letter-spacing: 0.05em;
-}
+      .read-more:hover {
+        color: var(--accent);
+        padding-left: 1.7rem;
+        letter-spacing: 0.05em;
+      }
 
-.read-more:hover::before {
-  width: 1.1rem;
-}
+      .read-more:hover::before {
+        width: 1.1rem;
+      }
 
-.log-card.no-link h2 {
-  color: var(--text);
-}
+      .log-card.no-link h2 {
+        color: var(--text);
+      }
 
-/* ---------- Mobile Viewport Rules ---------- */
+      /* ---------- Mobile Viewport Rules ---------- */
 
-@media (max-width: 900px) {
-  body {
-    display: block;
-  }
+      @media (max-width: 900px) {
+        body {
+          display: block;
+        }
 
-  html {
-    scroll-padding-top: 1rem;
-  }
+        html {
+          scroll-padding-top: 1rem;
+        }
 
-  .content {
-    padding: 1.5rem 1rem;
-  }
-}
+        .content {
+          padding: 1.5rem 1rem;
+        }
+      }
 
-@media (max-width: 600px) {
-  .logs-header h1 {
-    font-size: 2rem;
-  }
+      @media (max-width: 600px) {
+        .logs-header h1 {
+          font-size: 2rem;
+        }
 
-  .log-card {
-    padding: 1.25rem;
-  }
-}
-  </style>
-</head>
-<body>
-  <main class="content">
-    <div class="logs-wrap">
+        .log-card {
+          padding: 1.25rem;
+        }
+      }
+    </style>
+  </head>
 
-      <header class="logs-header">
-        <h1>The Time Vault</h1>
-        <p>A running log of things I've built, broken, and learned along the way.</p>
-      </header>
-
-      <div class="log-list">
-
-        <article class="log-card">
-          <p class="log-date">Saturday, 22 Aug 2026</p>
-          <h2><a href="logs/whoami.html">Who am I without them ?</a></h2>
-          <p class="log-excerpt">
-            Who am I without them? Click to read more about it.
+  <body>
+    <main class="content">
+      <div class="logs-wrap">
+        <header class="logs-header">
+          <h1>The Time Vault</h1>
+          <p>
+            A running log of things I've built, broken, and learned along the
+            way.
           </p>
-          <a href="logs/whoami.html" class="read-more">Read full entry &rarr;</a>
-        </article>
+        </header>
 
-        <article class="log-card">
-          <p class="log-date">Sunday, 05 Apr 2026</p>
-          <h2><a href="logs/The Digest.html">The Digest — CipherHash</a></h2>
-          <p class="log-excerpt">
-            The third blog I put out, about CipherHash — a hashing project my
-            friend Avinash K. and I built as a college assignment. And yes, the
-            blog is called The Digest for a reason.
-          </p>
-          <a href="logs/The Digest.html" class="read-more">Read full entry &rarr;</a>
-        </article>
+        <div class="log-list">
+          <article class="log-card">
+            <p class="log-date">Tuesday, 10 Nov 2026</p>
+            <h2><a href="logs/nvim.html">I Use Neovim BTW.</a></h2>
+            <p class="log-excerpt">
+              This is log entry 4, being about me building my own Neovim config.
+              Neovim is a modern, extensible terminal text editor.
+            </p>
+            <a href="logs/nvim.html" class="read-more"
+              >Read full entry &rarr;</a
+            >
+          </article>
 
-        <article class="log-card">
-          <p class="log-date">Thursday, 21 Feb 2026</p>
-          <h2><a href="logs/Log archiviette.html">Archiviette — Three Idiots Who Know Nothing Try to Build Something</a></h2>
-          <p class="log-excerpt">
-            The title of this entry was given by my friend DK. We decided to
-            build Archiviette, a student attendance and marks tracking system
-            for our class.
-          </p>
-          <a href="logs/Log archiviette.html" class="read-more">Read full entry &rarr;</a>
-        </article>
+          <article class="log-card">
+            <p class="log-date">Saturday, 22 Aug 2026</p>
+            <h2><a href="logs/whoami.html">Who am I without them ?</a></h2>
+            <p class="log-excerpt">
+              Who am I without them? Click to read more about it.
+            </p>
+            <a href="logs/whoami.html" class="read-more"
+              >Read full entry &rarr;</a
+            >
+          </article>
 
-        <article class="log-card no-link">
-          <p class="log-date">Thursday, 19 Feb 2026</p>
-          <h2>Entry 1</h2>
-          <p class="log-excerpt">
-            This is my first log. It was supposed to be written a long time
-            ago, but I guess I'm only logging it now because of my laziness.
-          </p>
-        </article>
+          <article class="log-card">
+            <p class="log-date">Sunday, 05 Apr 2026</p>
+            <h2><a href="logs/The Digest.html">The Digest — CipherHash</a></h2>
+            <p class="log-excerpt">
+              The third blog I put out, about CipherHash — a hashing project my
+              friend Avinash K. and I built as a college assignment. And yes,
+              the blog is called The Digest for a reason.
+            </p>
+            <a href="logs/The Digest.html" class="read-more"
+              >Read full entry &rarr;</a
+            >
+          </article>
 
+          <article class="log-card">
+            <p class="log-date">Thursday, 21 Feb 2026</p>
+            <h2>
+              <a href="logs/Log archiviette.html"
+                >Archiviette — Three Idiots Who Know Nothing Try to Build
+                Something</a
+              >
+            </h2>
+            <p class="log-excerpt">
+              The title of this entry was given by my friend DK. We decided to
+              build Archiviette, a student attendance and marks tracking system
+              for our class.
+            </p>
+            <a href="logs/Log archiviette.html" class="read-more"
+              >Read full entry &rarr;</a
+            >
+          </article>
+
+          <article class="log-card no-link">
+            <p class="log-date">Thursday, 19 Feb 2026</p>
+            <h2>Entry 1</h2>
+            <p class="log-excerpt">
+              This is my first log. It was supposed to be written a long time
+              ago, but I guess I'm only logging it now because of my laziness.
+            </p>
+          </article>
+        </div>
       </div>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 </html>
