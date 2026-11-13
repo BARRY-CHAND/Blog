@@ -465,6 +465,14 @@ img {
 .skill p {
 	color: var(--muted);
 }
+.project-link {
+	color: var(--accent);
+	text-decoration: underline;
+}
+
+.project-link :hover  {
+	color: var(--primary-accent);
+}
 
 .project-index,
 .skill-index,
