@@ -1,0 +1,6 @@
+add friends page and link to their friends page in my site.
+increase the overall width of the page (content side).
+remove he unnecessary blocks in style.css
+think about adding another blog entry.
+try adding a readme file to the nvim config and possibly having it in an seperate repo (same for hyprland).
+
